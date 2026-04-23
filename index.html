@@ -29,9 +29,7 @@
     </style>
 <!--
 
-TemplateMo 576 SnapX Photography
 
-https://templatemo.com/tm-576-snapx-photography
 
 -->
   </head>
@@ -558,6 +556,23 @@ https://templatemo.com/tm-576-snapx-photography
   <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
   <script src="assets/js/owl-carousel.js"></script>
   <script src="assets/js/custom.js"></script>
+
+  <script>
+document.getElementById("formLogin").addEventListener("submit", function(e) {
+  e.preventDefault();
+
+  let email = document.querySelector('input[type="email"]').value;
+  let password = document.querySelector('input[type="password"]').value;
+
+  // LOGIN PALSU (biar keliatan jalan)
+  if(email === "admin@gmail.com" && password === "12345") {
+    alert("Login berhasil 🎉");
+    window.location.href = "index.html";
+  } else {
+    alert("Email atau password salah 😑");
+  }
+});
+  </script>
   
   </body>
 </html>
