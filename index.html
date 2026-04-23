@@ -22,29 +22,15 @@
     <link rel="stylesheet" href="assets/css/animate.css">
     <link rel="stylesheet"href="https://unpkg.com/swiper@7/swiper-bundle.min.css"/>
     <style>
-    .user_login,
-    .user_register {
+.user_login {
+  display: block;
+}
+
+.user_register {
   display: none;
 }
-    .popupContainer {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  
-  width: 300px;
-  max-width: 90%;
-  
-  z-index: 9999;
-  background: #fff;
-  border-radius: 10px;
-  box-shadow: 0 0 20px rgba(0,0,0,0.3);
-}
 
-.popupBody {
-  padding: 20px;
-}
-
+/* BACKGROUND GELAP */
 #modal {
   position: fixed;
   top: 0;
@@ -53,8 +39,22 @@
   height: 100%;
   background: rgba(0,0,0,0.6);
   display: none;
+  z-index: 9999;
 }
-</style>
+
+/* KOTAK LOGIN */
+.popupContainer {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  
+  width: 320px;
+  background: #fff;
+  border-radius: 10px;
+  padding: 20px;
+}
+    </style>
   </head>
 
 <body>
