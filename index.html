@@ -609,6 +609,19 @@ document.getElementById("formRegister").addEventListener("submit", function(e) {
   alert("Akun berhasil didaftarkan 😌");
 });
   </script>
+
+  <script>
+// buka modal
+document.getElementById("modal_trigger").onclick = function(e){
+  e.preventDefault();
+  document.getElementById("modal").style.display = "block";
+};
+
+// tutup modal
+document.querySelector(".modal_close").onclick = function(){
+  document.getElementById("modal").style.display = "none";
+};
+  </script>
   
   </body>
 </html>
