@@ -27,11 +27,6 @@
   display: none;
 }
     </style>
-<!--
-
-
-
--->
   </head>
 
 <body>
@@ -78,7 +73,7 @@
 
   <!-- LOGIN -->
   <div class="user_login">
-    <form>
+    <form id="formLogin">
       <label>Email</label>
       <input type="email" placeholder="Masukkan email">
 
@@ -93,7 +88,7 @@
 
   <!-- REGISTER -->
   <div class="user_register">
-    <form>
+    <form id="formRegister">
       <label>Nama Pengguna</label>
       <input type="text" placeholder="Nama pengguna">
 
@@ -571,6 +566,13 @@ document.getElementById("formLogin").addEventListener("submit", function(e) {
   } else {
     alert("Email atau password salah 😑");
   }
+});
+  </script>
+
+  <script>
+document.getElementById("formRegister").addEventListener("submit", function(e) {
+  e.preventDefault();
+  alert("Akun berhasil didaftarkan 😌");
 });
   </script>
   
