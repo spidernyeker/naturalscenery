@@ -103,49 +103,48 @@
   </header>
   <!-- ***** Header Area End ***** -->
 
-  <div id="modal" class="popupContainer" style="display:none;">
+  <div id="modal" style="display:none;">
+  <div class="popupContainer">
+
     <div class="popupHeader">
-        <span class="header_title">Masuk</span>
-        <span class="modal_close"><i class="fa fa-times"></i></span>
+      <span class="header_title">Masuk</span>
+      <span class="modal_close"><i class="fa fa-times"></i></span>
     </div>
 
     <section class="popupBody">
 
-  <!-- LOGIN -->
-  <div class="user_login">
-    <form id="formLogin">
-      <label>Email</label>
-      <input type="email" placeholder="Masukkan email">
+      <!-- LOGIN -->
+      <div class="user_login">
+        <form id="formLogin">
+          <label>Email</label>
+          <input type="email" name="email">
 
-      <label>Kata Sandi</label>
-      <input type="password" placeholder="Masukkan kata sandi">
+          <label>Kata Sandi</label>
+          <input type="password" name="password">
 
-      <div class="action_btns">
-        <button type="submit" class="btn btn_red">Masuk</button>
+          <button type="submit">Masuk</button>
+        </form>
       </div>
-    </form>
-  </div>
 
-  <!-- REGISTER -->
-  <div class="user_register">
-    <form id="formRegister">
-      <label>Nama Pengguna</label>
-      <input type="text" placeholder="Nama pengguna">
+      <!-- REGISTER -->
+      <div class="user_register">
+        <form id="formRegister">
+          <label>Nama</label>
+          <input type="text">
 
-      <label>Email</label>
-      <input type="email" placeholder="Email">
+          <label>Email</label>
+          <input type="email">
 
-      <label>Kata Sandi</label>
-      <input type="password" placeholder="Kata sandi">
+          <label>Password</label>
+          <input type="password">
 
-      <div class="action_btns">
-        <button type="submit" class="btn btn_red">Daftar</button>
+          <button type="submit">Daftar</button>
+        </form>
       </div>
-    </form>
-  </div>
 
- </section>
-    
+    </section>
+
+  </div>
   </div>
 
   <!-- ***** Main Banner Area Start ***** -->
@@ -593,8 +592,8 @@
 document.getElementById("formLogin").addEventListener("submit", function(e) {
   e.preventDefault();
 
-  let email = document.querySelector('input[type="email"]').value;
-  let password = document.querySelector('input[type="password"]').value;
+  let email = document.querySelector('#formLogin input[type="email"]').value;
+  let password = document.querySelector('#formLogin input[type="password"]').value;
 
   // LOGIN PALSU (biar keliatan jalan)
   if(email === "admin@gmail.com" && password === "12345") {
