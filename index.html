@@ -21,33 +21,22 @@
     <link rel="stylesheet" href="assets/css/owl.css">
     <link rel="stylesheet" href="assets/css/animate.css">
     <link rel="stylesheet"href="https://unpkg.com/swiper@7/swiper-bundle.min.css"/>
+   
     <style>
-.user_login {
-  display: block;
-}
+.user_login { display: block; }
+.user_register { display: none; }
 
-.user_register {
-  display: none;
-}
-
-/* ANIMASI LOGIN */
+/* animasi */
 .popupContainer {
   animation: fadeIn 0.3s ease;
 }
 
 @keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translate(-50%, -60%);
-  }
-  to {
-    opacity: 1;
-    transform: translate(-50%, -50%);
-  }
+  from { opacity: 0; transform: translate(-50%, -60%); }
+  to { opacity: 1; transform: translate(-50%, -50%); }
 }
-</style>
-      
-/* BACKGROUND GELAP */
+
+/* background gelap */
 #modal {
   position: fixed;
   top: 0;
@@ -59,19 +48,19 @@
   z-index: 9999;
 }
 
-/* KOTAK LOGIN */
+/* kotak login */
 .popupContainer {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  
   width: 320px;
   background: #fff;
   border-radius: 10px;
   padding: 20px;
 }
-  </style>
+    </style>
+    
   <!--
 
   TemplateMo 576 SnapX Photography
@@ -588,8 +577,6 @@
 
   <!-- Scripts -->
   <!-- Bootstrap core JavaScript -->
-  <script src="vendor/jquery/jquery.min.js"></script>
-  <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
 
   <script src="assets/js/isotope.min.js"></script>
   <script src="assets/js/owl-carousel.js"></script>
@@ -601,7 +588,6 @@
   <script src="vendor/jquery/jquery.min.js"></script>
   <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
   <script src="assets/js/owl-carousel.js"></script>
-  <script src="assets/js/custom.js"></script>
 
   <script>
 document.getElementById("formLogin").addEventListener("submit", function(e) {
