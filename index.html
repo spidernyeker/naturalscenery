@@ -1,182 +1,579 @@
-<!DOCTYPE html>
-<html lang="id">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<!DOCTYPE html>  <html lang="en">    <head>  <meta charset="utf-8">  
+<meta name="author" content="templatemo">  
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">  
 
-<title>Wisata Alam Indonesia</title>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">  
 
-<link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<title>Pemandangan Alam</title>  
 
+<!-- Bootstrap core CSS -->  
+<link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">  
+
+
+<!-- Additional CSS Files -->  
+<link rel="stylesheet" href="assets/css/fontawesome.css">  
+<link rel="stylesheet" href="assets/css/templatemo-snapx-photography.css">  
+<link rel="stylesheet" href="assets/css/owl.css">  
+<link rel="stylesheet" href="assets/css/animate.css">  
+<link rel="stylesheet"href="https://unpkg.com/swiper@7/swiper-bundle.min.css"/>  
 <style>
-body {
-  font-family: Arial, sans-serif;
-}
 
-/* MODAL */
-#modal {
-  display: none;
-  position: fixed;
-  width: 100%;
-  height: 100%;
-  background: rgba(0,0,0,0.6);
-  top: 0;
-  left: 0;
-  z-index: 9999;
-}
-
-.popupContainer {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background: white;
-  width: 320px;
-  padding: 20px;
-  border-radius: 10px;
+.user_login {
+display: block;
 }
 
 .user_register {
-  display: none;
+display: none;
 }
 
-button {
-  margin-top: 10px;
-  width: 100%;
+/* ANIMASI LOGIN */
+.popupContainer {
+animation: fadeIn 0.3s ease;
 }
 
-/* HEADER */
-header {
-  background: #222;
-  padding: 10px;
-  color: white;
+@keyframes fadeIn {
+from {
+opacity: 0;
+transform: translate(-50%, -60%);
 }
-
-header a {
-  color: white;
-  margin-right: 15px;
-  text-decoration: none;
+to {
+opacity: 1;
+transform: translate(-50%, -50%);
 }
-
-/* BANNER */
-.banner {
-  text-align: center;
-  padding: 50px;
-  background: #eee;
 }
 </style>
-</head>
 
-<body>
+/* BACKGROUND GELAP */
+#modal {
+position: fixed;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+background: rgba(0,0,0,0.6);
+display: none;
+z-index: 9999;
+}
 
-<header>
-  <a href="#">Beranda</a>
-  <a href="#">Destinasi</a>
-  <a href="#">Kategori</a>
+/* KOTAK LOGIN */
+.popupContainer {
+position: absolute;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
 
-  <button id="modal_trigger">Masuk / Daftar</button>
-</header>
+width: 320px;
+background: #fff;
+border-radius: 10px;
+padding: 20px;
+}
+</style>
 
-<div class="banner">
-  <h1>Jelajahi Keindahan Wisata Alam Indonesia 🌿</h1>
-  <p>Gunung, pantai, air terjun… semua ada. Tinggal niat doang.</p>
+  <!--  
+  
+  TemplateMo 576 SnapX Photography  
+  https://templatemo.com/tm-576-snapx-photography  
+  
+  -->    </head>  <body>    <!-- ***** Header Area Start ***** -->    <header class="header-area header-sticky">  
+    <div class="container">  
+        <div class="row">  
+            <div class="col-12">  
+                <nav class="main-nav">  
+                    <!-- ***** Logo Start ***** -->  
+                    <a href="index.html" class="logo">  
+                        <img src="assets/images/logo.png" alt="SnapX Photography Template">  
+                    </a>  
+                    <!-- ***** Logo End ***** -->  
+                    <!-- ***** Menu Start ***** -->  
+                    <ul class="nav">  
+                      <li><a href="index.html" class="active">Beranda</a></li>  
+                      <li><a href="destinasi.html">Destinasi</a></li>  
+                      <li><a href="kategori.html">Kategori</a></li>  
+                    </ul>     
+                    <div class="border-button">  
+                      <a id="modal_trigger" href="#modal" class="sign-in-up"><i class="fa fa-user"></i> Masuk/Daftar</a>  
+                    </div>  
+                    <a class='menu-trigger'>  
+                        <span>Menu</span>  
+                    </a>  
+                    <!-- ***** Menu End ***** -->  
+                </nav>  
+            </div>  
+        </div>  
+    </div>  
+  </header>  
+  <!-- ***** Header Area End ***** -->    <div id="modal" class="popupContainer" style="display:none;">  
+    <div class="popupHeader">  
+        <span class="header_title">Masuk</span>  
+        <span class="modal_close"><i class="fa fa-times"></i></span>  
+    </div>  <section class="popupBody">
+
+  <!-- LOGIN -->    <div class="user_login">  
+    <form id="formLogin">  
+      <label>Email</label>  
+      <input type="email" placeholder="Masukkan email">  <label>Kata Sandi</label>  
+  <input type="password" placeholder="Masukkan kata sandi">  
+
+  <div class="action_btns">  
+    <button type="submit" class="btn btn_red">Masuk</button>  
+  </div>  
+</form>
+
+  </div>    <!-- REGISTER -->    <div class="user_register">  
+    <form id="formRegister">  
+      <label>Nama Pengguna</label>  
+      <input type="text" placeholder="Nama pengguna">  <label>Email</label>  
+  <input type="email" placeholder="Email">  
+
+  <label>Kata Sandi</label>  
+  <input type="password" placeholder="Kata sandi">  
+
+  <div class="action_btns">  
+    <button type="submit" class="btn btn_red">Daftar</button>  
+  </div>  
+</form>
+
+  </div>   </section>    </div>    <!-- ***** Main Banner Area Start ***** -->    <div class="main-banner">  
+    <div class="container">  
+      <div class="row">  
+        <div class="col-lg-10 offset-lg-1">  
+          <div class="header-text">  
+            <h2>Jelajahi Keindahan <em>Wisata Alam</em> Indonesia 🌿</h2>  
+            <p>Temukan rekomendasi tempat wisata alam terbaik mulai dari gunung, pantai, hingga air terjun yang memukau.</p>            <div class="buttons">  
+              <div class="big-border-button">  
+                <a href="destinasi.html">Lihat Destinasi</a>  
+              </div>  
+              <div class="icon-button">  
+                <a href="https://youtube.com/templatemo" target="_blank"><i class="fa fa-play"></i> Watch Our Video Now</a>  
+              </div>  
+            </div>  
+          </div>  
+        </div>  
+      </div>  
+    </div>  
+  </div>  
+  <!-- ***** Main Banner Area End ***** -->    <section class="featured-items" id="featured-items">  
+    <div class="container">  
+      <div class="row">  
+        <div class="col-lg-12">  
+          <div class="owl-features owl-carousel" style="position: relative; z-index: 5;">  
+            <div class="item">  
+              <div class="thumb">  
+                <img src="assets/images/featured-01.jpg" alt="">  
+                <div class="hover-effect">  
+                  <div class="content">  
+                    <h4>Gunung Bromo</h4>  
+                    <ul>  
+                      <li><span>Lokasi:</span> Jawa Timur</li>  
+                      <li><span>Tipe:</span> Gunung</li>  
+                      <li><span>Rating:</span> ⭐ 4.8</li>  
+                    </ul>  
+                  </div>  
+                </div>  
+              </div>  
+            </div>  
+            <div class="item">  
+              <div class="thumb">  
+                <img src="assets/images/featured-02.jpg" alt="">  
+                <div class="hover-effect">  
+                  <div class="content">  
+                    <h4>Smile In The Nature <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i> <span>(4.5)</span></h4>  
+                    <ul>  
+                      <li><span>Contest Winner:</span> Thomas Eddy</li>  
+                      <li><span>Contest Author:</span> Anthony Soft</li>  
+                      <li><span>Awards:</span> $1,200 + Canon EOS R7</li>  
+                    </ul>  
+                  </div>  
+                </div>  
+              </div>  
+            </div>  
+            <div class="item">  
+              <div class="thumb">  
+                <img src="assets/images/featured-03.jpg" alt="">  
+                <div class="hover-effect">  
+                  <div class="content">  
+                    <h4>Happy In The Nature <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i> <span>(4.5)</span></h4>  
+                    <ul>  
+                      <li><span>Contest Winner:</span> Vincent Adam</li>  
+                      <li><span>Contest Author:</span> Anthony Soft</li>  
+                      <li><span>Awards:</span> $1,800 + Canon EOS R6</li>  
+                    </ul>  
+                  </div>  
+                </div>  
+              </div>  
+            </div>  
+            <div class="item">  
+              <div class="thumb">  
+                <img src="assets/images/featured-01.jpg" alt="">  
+                <div class="hover-effect">  
+                  <div class="content">  
+                    <h4>Walk In The Nature <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i> <span>(4.5)</span></h4>  
+                    <ul>  
+                      <li><span>Contest Winner:</span> Thomas Eddy</li>  
+                      <li><span>Contest Author:</span> Anthony Soft</li>  
+                      <li><span>Awards:</span> $8,400 + Canon EOS R1</li>  
+                    </ul>  
+                  </div>  
+                </div>  
+              </div>  
+            </div>  
+            <div class="item">  
+              <div class="thumb">  
+                <img src="assets/images/featured-02.jpg" alt="">  
+                <div class="hover-effect">  
+                  <div class="content">  
+                    <h4>Run In The Nature <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i> <span>(4.5)</span></h4>  
+                    <ul>  
+                      <li><span>Contest Winner:</span> Vincent Adam</li>  
+                      <li><span>Contest Author:</span> Anthony Soft</li>  
+                      <li><span>Awards:</span> $5,500 + Canon EOS R3</li>  
+                    </ul>  
+                  </div>  
+                </div>  
+              </div>  
+            </div>  
+            <div class="item">  
+              <div class="thumb">  
+                <img src="assets/images/featured-03.jpg" alt="">  
+                <div class="hover-effect">  
+                  <div class="content">  
+                    <h4>Stay In The Nature <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i> <span>(4.5)</span></h4>  
+                    <ul>  
+                      <li><span>Contest Winner:</span> Thomas Eddy</li>  
+                      <li><span>Contest Author:</span> Anthony Soft</li>  
+                      <li><span>Awards:</span> $4,400 + Canon EOS R5</li>  
+                    </ul>  
+                  </div>  
+                </div>  
+              </div>  
+            </div>  
+            <div class="item">  
+              <div class="thumb">  
+                <img src="assets/images/featured-01.jpg" alt="">  
+                <div class="hover-effect">  
+                  <div class="content">  
+                    <h4>Walk In The Nature <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i> <span>(4.5)</span></h4>  
+                    <ul>  
+                      <li><span>Contest Winner:</span> Vincent Adam</li>  
+                      <li><span>Contest Author:</span> Anthony Soft</li>  
+                      <li><span>Awards:</span> $3,800 + Canon EOS R6</li>  
+                    </ul>  
+                  </div>  
+                </div>  
+              </div>  
+            </div>  
+            <div class="item">  
+              <div class="thumb">  
+                <img src="assets/images/featured-02.jpg" alt="">  
+                <div class="hover-effect">  
+                  <div class="content">  
+                    <h4>Shoot In The Nature <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i> <span>(4.5)</span></h4>  
+                    <ul>  
+                      <li><span>Contest Winner:</span> Vincent Adam</li>  
+                      <li><span>Contest Author:</span> Anthony Soft</li>  
+                      <li><span>Awards:</span> $2,400 + Canon EOS R7</li>  
+                    </ul>  
+                  </div>  
+                </div>  
+              </div>  
+            </div>  
+            <div class="item">  
+              <div class="thumb">  
+                <img src="assets/images/featured-03.jpg" alt="">  
+                <div class="hover-effect">  
+                  <div class="content">  
+                    <h4>Fly In The Nature <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i> <span>(4.5)</span></h4>  
+                    <ul>  
+                      <li><span>Contest Winner:</span> Vincent Adam</li>  
+                      <li><span>Contest Author:</span> Anthony Soft</li>  
+                      <li><span>Awards:</span> $1,200 + Canon EOS R10</li>  
+                    </ul>  
+                  </div>  
+                </div>  
+              </div>  
+            </div>  
+          </div>  
+        </div>  
+      </div>  
+    </div>  
+  </section>    <section class="popular-categories">  
+    <div class="container-fluid">  
+      <div class="row">  
+        <div class="col-lg-6">  
+          <div class="section-heading">  
+            <h6>Our Categories</h6>  
+            <h4>Check Out <em>Popular</em> Contest <em>Categories</em></h4>  
+          </div>  
+        </div>  
+        <div class="col-lg-6">  
+          <div class="main-button">  
+            <a href="categories.html">Discover All Categories</a>  
+          </div>  
+        </div>  
+        <div class="col-lg-3 col-sm-6">  
+          <div class="popular-item">  
+            <div class="top-content">  
+              <div class="icon">  
+                <img src="assets/images/icon-01.png" alt="">  
+              </div>  
+              <div class="right">  
+                <h4>Nature Pic Contest</h4>  
+                <span><em>126</em> Available Contests</span>  
+              </div>  
+            </div>  
+            <div class="thumb">  
+              <img src="assets/images/popular-01.png" alt="">  
+              <span class="category">Top Contest</span>  
+              <span class="likes"><i class="fa fa-heart"></i> 256</span>  
+            </div>  
+            <div class="border-button">  
+              <a href="contest-details.html">Browse Nature Pic Contests</a>  
+            </div>  
+          </div>  
+        </div>  
+        <div class="col-lg-3 col-sm-6">  
+          <div class="popular-item">  
+            <div class="top-content">  
+              <div class="icon">  
+                <img src="assets/images/icon-02.png" alt="">  
+              </div>  
+              <div class="right">  
+                <h4>Random Pic Contest</h4>  
+                <span><em>116</em> Available Contests</span>  
+              </div>  
+            </div>  
+            <div class="thumb">  
+              <img src="assets/images/popular-02.png" alt="">  
+              <span class="category">Top Contest</span>  
+              <span class="likes"><i class="fa fa-heart"></i> 256</span>  
+            </div>  
+            <div class="border-button">  
+              <a href="contest-details.html">Browse Random Pic Contests</a>  
+            </div>  
+          </div>  
+        </div>  
+        <div class="col-lg-3 col-sm-6">  
+          <div class="popular-item">  
+            <div class="top-content">  
+              <div class="icon">  
+                <img src="assets/images/icon-03.png" alt="">  
+              </div>  
+              <div class="right">  
+                <h4>Portrait Pic Contest</h4>  
+                <span><em>164</em> Available Contests</span>  
+              </div>  
+            </div>  
+            <div class="thumb">  
+              <img src="assets/images/popular-03.png" alt="">  
+              <span class="category">Top Contest</span>  
+              <span class="likes"><i class="fa fa-heart"></i> 256</span>  
+            </div>  
+            <div class="border-button">  
+              <a href="contest-details.html">Browse Portrait Pic Contests</a>  
+            </div>  
+          </div>  
+        </div>  
+        <div class="col-lg-3 col-sm-6">  
+          <div class="popular-item">  
+            <div class="top-content">  
+              <div class="icon">  
+                <img src="assets/images/icon-04.png" alt="">  
+              </div>  
+              <div class="right">  
+                <h4>Space Pic Contest</h4>  
+                <span><em>135</em> Available Contests</span>  
+              </div>  
+            </div>  
+            <div class="thumb">  
+              <img src="assets/images/popular-04.png" alt="">  
+              <span class="category">Top Contest</span>  
+              <span class="likes"><i class="fa fa-heart"></i> 256</span>  
+            </div>  
+            <div class="border-button">  
+              <a href="contest-details.html">Browse Space Pic Contests</a>  
+            </div>  
+          </div>  
+        </div>  
+      </div>  
+    </div>  
+  </section>    <section class="closed-contests">  
+    <div class="container">  
+      <div class="row">  
+        <div class="col-lg-12">  
+          <div class="section-heading text-center">  
+            <h6>Closed Photography Contests</h6>  
+            <h4><em>Previous Contests</em> With Handpicked <em>Winners</em></h4>  
+          </div>  
+        </div>  
+        <div class="col-lg-12">  
+          <div class="owl-features owl-carousel" style="position: relative; z-index: 5;">  
+            <div class="item">  
+              <div class="closed-item">  
+                <div class="thumb">  
+                  <img src="assets/images/closed-01.jpg" alt="">  
+                  <span class="winner"><em>Winner:</em> Anthony Soft</span>  
+                  <span class="price"><em>Award :</em> $1,600</span>  
+                </div>  
+                <div class="down-content">  
+                  <div class="row">  
+                    <div class="col-7">  
+                      <h4>88 Participants <br><span>Number Of Artists</span></h4>  
+                    </div>  
+                    <div class="col-5">  
+                      <h4 class="pics">320 Pictures <br><span>Submited Pics</span></h4>  
+                    </div>  
+                  </div>  
+                </div>  
+              </div>  
+            </div>  
+            <div class="item">  
+              <div class="closed-item">  
+                <div class="thumb">  
+                  <img src="assets/images/closed-02.jpg" alt="">  
+                  <span class="winner"><em>Winner:</em> Anthony Soft</span>  
+                  <span class="price"><em>Award :</em> $4,200</span>  
+                </div>  
+                <div class="down-content">  
+                  <div class="row">  
+                    <div class="col-7">  
+                      <h4>96 Participants <br><span>Number Of Artists</span></h4>  
+                    </div>  
+                    <div class="col-5">  
+                      <h4 class="pics">410 Pictures <br><span>Submited Pics</span></h4>  
+                    </div>  
+                  </div>  
+                </div>  
+              </div>  
+            </div>  
+            <div class="item">  
+              <div class="closed-item">  
+                <div class="thumb">  
+                  <img src="assets/images/closed-03.jpg" alt="">  
+                  <span class="winner"><em>Winner:</em> Anthony Soft</span>  
+                  <span class="price"><em>Award :</em> $3,200</span>  
+                </div>  
+                <div class="down-content">  
+                  <div class="row">  
+                    <div class="col-7">  
+                      <h4>74 Participants <br><span>Number Of Artists</span></h4>  
+                    </div>  
+                    <div class="col-5">  
+                      <h4 class="pics">284 Pictures <br><span>Submited Pics</span></h4>  
+                    </div>  
+                  </div>  
+                </div>  
+              </div>  
+            </div>  
+          </div>  
+        </div>  
+        <div class="col-lg-12">  
+          <div class="border-button text-center">  
+            <a href="contests.html">Browse Open Contests</a>  
+          </div>  
+        </div>  
+      </div>  
+    </div>  
+  </section>    <section class="pricing-plans">  
+    <div class="container">  
+      <div class="row">  
+        <div class="col-lg-12">  
+          <div class="section-heading text-center">  
+            <h6>Our Pricing</h6>  
+            <h4>Photography <em>Contest Plans</em> and Price <em>Awards</em></h4>  
+          </div>  
+        </div>  
+        <div class="col-lg-4">  
+          <div class="pricing-item">  
+            <img src="assets/images/pricing-01.jpg" alt="">  
+            <h4>Basic Plan</h4>  
+            <ul class="first-plan">  
+              <li>Lorem Ipsum Dolores Sonte</li>  
+              <li>Songe Lorem Ipsum Dol</li>  
+              <li>Matrios Venga Heptuss</li>  
+              <li>Denim Sriracha Kogi</li>  
+              <li>Digital Photography Awards</li>  
+                     </ul>  
+            <span class="price">$25 USD</span>  
+            <div class="border-button">  
+              <a href="#">Choose This Plan</a>  
+            </div>  
+          </div>  
+        </div>  
+        <div class="col-lg-4">  
+          <div class="pricing-item">  
+            <img src="assets/images/pricing-02.jpg" alt="">  
+            <h4>Standard Plan</h4>  
+            <ul class="second-plan">  
+              <li>Lorem Ipsum Dolores Sonte</li>  
+              <li>Songe Lorem Ipsum Dol</li>  
+              <li>Matrios Venga Heptuss</li>  
+              <li>Denim Sriracha Kogi</li>  
+              <li>Digital Photography Awards</li>  
+            </ul>  
+            <span class="price">$45 USD</span>  
+            <div class="border-button">  
+              <a href="#">Choose This Plan</a>  
+            </div>  
+          </div>  
+        </div>  
+        <div class="col-lg-4">  
+          <div class="pricing-item">  
+            <img src="assets/images/pricing-03.jpg" alt="">  
+            <h4>Advanced Plan</h4>  
+            <ul class="third-plan">  
+              <li>Lorem Ipsum Dolores Sonte</li>  
+              <li>Songe Lorem Ipsum Dol</li>  
+              <li>Matrios Venga Heptuss</li>  
+              <li>Denim Sriracha Kogi</li>  
+              <li>Digital Photography Awards</li>  
+            </ul>  
+            <span class="price">$85 USD</span>  
+            <div class="border-button">  
+              <a href="#">Choose This Plan</a>  
+            </div>  
+          </div>  
+        </div>  
+      </div>  
+    </div>  
+  </section>    <footer>  
+    <div class="container">  
+      <div class="row">  
+        <div class="col-lg-12">  
+          <p>Copyright © 2048 <a href="#">SnapX</a> Photo Contest Co., Ltd. All rights reserved.   Design: <a title="CSS Templates" rel="sponsored" href="https://templatemo.com/page/1" target="_blank">TemplateMo</a></p>  
+    </div>  
+  </div>  
 </div>
 
-<!-- MODAL -->
-<div id="modal">
-  <div class="popupContainer">
-    
-    <h3 id="judulForm">Masuk</h3>
-
-    <!-- LOGIN -->
-    <div class="user_login">
-      <form id="formLogin">
-        <input type="email" placeholder="Email" required>
-        <input type="password" placeholder="Kata sandi" required>
-        <button type="submit">Masuk</button>
-      </form>
-      <p onclick="tampilRegister()" style="cursor:pointer;color:blue;">Belum punya akun? Daftar</p>
-    </div>
-
-    <!-- REGISTER -->
-    <div class="user_register">
-      <form id="formRegister">
-        <input type="text" placeholder="Nama pengguna" required>
-        <input type="email" placeholder="Email" required>
-        <input type="password" placeholder="Kata sandi" required>
-        <button type="submit">Daftar</button>
-      </form>
-      <p onclick="tampilLogin()" style="cursor:pointer;color:blue;">Sudah punya akun? Masuk</p>
-    </div>
-
-    <button onclick="tutupModal()">Tutup</button>
-  </div>
-</div>
-
-<script>
-
-// buka modal
-document.getElementById("modal_trigger").onclick = function(){
-  document.getElementById("modal").style.display = "block";
-}
-
-// tutup modal
-function tutupModal(){
-  document.getElementById("modal").style.display = "none";
-}
-
-// pindah ke register
-function tampilRegister(){
-  document.querySelector(".user_login").style.display = "none";
-  document.querySelector(".user_register").style.display = "block";
-  document.getElementById("judulForm").innerText = "Daftar";
-}
-
-// pindah ke login
-function tampilLogin(){
-  document.querySelector(".user_login").style.display = "block";
-  document.querySelector(".user_register").style.display = "none";
-  document.getElementById("judulForm").innerText = "Masuk";
-}
-
-// REGISTER
-document.getElementById("formRegister").addEventListener("submit", function(e){
-  e.preventDefault();
-
-  let nama = document.querySelector('#formRegister input[type="text"]').value;
-  let email = document.querySelector('#formRegister input[type="email"]').value;
-  let password = document.querySelector('#formRegister input[type="password"]').value;
-
-  let user = {
-    nama: nama,
-    email: email,
-    password: password
-  };
-
-  localStorage.setItem("user", JSON.stringify(user));
-
-  alert("Akun berhasil dibuat 😎");
-  tampilLogin();
-});
-
-// LOGIN
-document.getElementById("formLogin").addEventListener("submit", function(e){
-  e.preventDefault();
-
-  let email = document.querySelector('#formLogin input[type="email"]').value;
-  let password = document.querySelector('#formLogin input[type="password"]').value;
-
-  let user = JSON.parse(localStorage.getItem("user"));
-
-  if(user && email === user.email && password === user.password){
-    alert("Login berhasil 🎉");
-    tutupModal();
-  } else {
-    alert("Email atau kata sandi salah 😑");
-  }
-});
-
-</script>
-
-</body>
+  </footer>    <!-- Scripts -->    <!-- Bootstrap core JavaScript -->    <script src="vendor/jquery/jquery.min.js"></script>    <script src="vendor/bootstrap/js/bootstrap.min.js"></script>    <script src="assets/js/isotope.min.js"></script>    <script src="assets/js/owl-carousel.js"></script>    <script src="assets/js/tabs.js"></script>    <script src="assets/js/popup.js"></script>    <script src="assets/js/custom.js"></script>    <script src="vendor/jquery/jquery.min.js"></script>    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>    <script src="assets/js/owl-carousel.js"></script>    <script src="assets/js/custom.js"></script>    <script>  
+document.getElementById("formLogin").addEventListener("submit", function(e) {  
+  e.preventDefault();  
+  
+  let email = document.querySelector('input[type="email"]').value;  
+  let password = document.querySelector('input[type="password"]').value;  
+  
+  // LOGIN PALSU (biar keliatan jalan)  
+  if(email === "admin@gmail.com" && password === "12345") {  
+    alert("Login berhasil 🎉");  
+    window.location.href = "index.html";  
+  } else {  
+    alert("Email atau password salah 😑");  
+  }  
+});  
+  </script>    <script>  
+document.getElementById("formRegister").addEventListener("submit", function(e) {  
+  e.preventDefault();  
+  alert("Akun berhasil didaftarkan 😌");  
+});  
+  </script>    <script>  
+// buka modal  
+document.getElementById("modal_trigger").onclick = function(e){  
+  e.preventDefault();  
+  document.getElementById("modal").style.display = "block";  
+};  
+  
+// tutup modal  
+document.querySelector(".modal_close").onclick = function(){  
+  document.getElementById("modal").style.display = "none";  
+};  
+  </script>    </body>  
 </html>
