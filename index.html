@@ -1,80 +1,152 @@
 <!DOCTYPE html>
 <html lang="id">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Wisata Alam Indonesia</title>
 
-  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Wisata Alam Indonesia</title>
+
+<link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/fontawesome.css">
+<link rel="stylesheet" href="assets/css/templatemo-snapx-photography.css">
+<link rel="stylesheet" href="assets/css/owl.css">
 </head>
 
 <body>
 
 <!-- NAVBAR -->
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+<header class="header-area header-sticky">
   <div class="container">
-    <a class="navbar-brand">Wisata Alam</a>
+    <nav class="main-nav">
+      <a href="index.html" class="logo">
+        <img src="assets/images/logo.png">
+      </a>
 
-    <ul class="navbar-nav ms-auto">
-      <li class="nav-item"><a class="nav-link" href="index.html">Beranda</a></li>
-      <li class="nav-item"><a class="nav-link" href="gunung.html">Gunung</a></li>
-      <li class="nav-item"><a class="nav-link" href="pantai.html">Pantai</a></li>
-      <li class="nav-item"><a class="nav-link" href="curug.html">Air Terjun</a></li>
-      <li class="nav-item"><a class="nav-link" href="danau.html">Danau & Kepulauan</a></li>
-      <li class="nav-item"><a class="nav-link" href="bukit.html">Bukit</a></li>
-      <li class="nav-item"><a class="nav-link" href="hutan.html">Hutan</a></li>
-      <li class="nav-item"><a class="nav-link" href="login.html">Login</a></li>
-    </ul>
+      <ul class="nav">
+        <li><a href="index.html" class="active">Beranda</a></li>
+        <li><a href="gunung.html">Gunung</a></li>
+        <li><a href="pantai.html">Pantai</a></li>
+        <li><a href="curug.html">Air Terjun</a></li>
+        <li><a href="danau.html">Danau</a></li>
+        <li><a href="pulau.html">Pulau</a></li>
+      </ul>
+    </nav>
   </div>
-</nav>
+</header>
 
-<!-- HERO -->
-<div class="container text-center mt-5">
-  <h1>🌿 Wisata Alam Indonesia</h1>
-  <p>Temukan berbagai tempat wisata alam terbaik di Indonesia dengan pemandangan indah dan menenangkan.</p>
+<!-- BANNER -->
+<div class="main-banner">
+  <div class="container text-center">
+    <h2>Jelajahi Keindahan Alam Indonesia</h2>
+    <p>Temukan gunung, pantai, dan tempat wisata terbaik di Indonesia.</p>
+  </div>
 </div>
+
+<!-- FEATURED (slider) -->
+<section class="featured-items">
+  <div class="container">
+    <div class="owl-features owl-carousel">
+
+      <div class="item">
+        <div class="thumb">
+          <img src="assets/images/featured-01.jpg">
+          <div class="hover-effect">
+            <div class="content">
+              <h4>Gunung Bromo</h4>
+              <p>Pemandangan matahari terbit yang indah.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="item">
+        <div class="thumb">
+          <img src="assets/images/featured-02.jpg">
+          <div class="hover-effect">
+            <div class="content">
+              <h4>Pantai Kuta</h4>
+              <p>Pantai terkenal dengan pasir putih.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="item">
+        <div class="thumb">
+          <img src="assets/images/featured-03.jpg">
+          <div class="hover-effect">
+            <div class="content">
+              <h4>Danau Toba</h4>
+              <p>Danau terbesar di Indonesia.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="item">
+        <div class="thumb">
+          <img src="assets/images/featured-01.jpg">
+          <div class="hover-effect">
+            <div class="content">
+              <h4>Banda Neira</h4>
+              <p>Pulau indah dengan laut jernih.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
 
 <!-- KATEGORI -->
-<div class="container mt-5">
-  <div class="row text-center">
+<section class="popular-categories">
+  <div class="container text-center">
+    <h4>Kategori Wisata</h4>
 
-    <div class="col-md-3">
-      <h5>Gunung</h5>
-      <a href="gunung.html" class="btn btn-primary">Lihat</a>
-    </div>
+    <div class="row mt-4">
 
-    <div class="col-md-3">
-      <h5>Pantai</h5>
-      <a href="pantai.html" class="btn btn-primary">Lihat</a>
-    </div>
+      <div class="col-md-4">
+        <h5>Gunung</h5>
+        <a href="gunung.html">Lihat</a>
+      </div>
 
-    <div class="col-md-3">
-      <h5>Air Terjun</h5>
-      <a href="airterjun.html" class="btn btn-primary">Lihat</a>
-    </div>
+      <div class="col-md-4">
+        <h5>Pantai</h5>
+        <a href="pantai.html">Lihat</a>
+      </div>
 
-    <div class="col-md-3">
-      <h5>Danau</h5>
-      <a href="danau.html" class="btn btn-primary">Lihat</a>
-    </div>
+      <div class="col-md-4">
+        <h5>Air Terjun</h5>
+        <a href="curug.html">Lihat</a>
+      </div>
 
-    <div class="col-md-3">
-      <h5>Pulau</h5>
-      <a href="pulau.html" class="btn btn-primary">Lihat</a>
-    </div>
+      <div class="col-md-4 mt-3">
+        <h5>Danau</h5>
+        <a href="danau.html">Lihat</a>
+      </div>
 
-    <div class="col-md-3 mt-3">
-      <h5>Bukit</h5>
-      <a href="bukit.html" class="btn btn-primary">Lihat</a>
-    </div>
+      <div class="col-md-4 mt-3">
+        <h5>Pulau</h5>
+        <a href="pulau.html">Lihat</a>
+      </div>
 
-    <div class="col-md-3 mt-3">
-      <h5>Hutan</h5>
-      <a href="hutan.html" class="btn btn-primary">Lihat</a>
     </div>
 
   </div>
-</div>
+</section>
+
+<!-- FOOTER -->
+<footer class="text-center p-3">
+  <p>© 2026 Wisata Alam Indonesia</p>
+</footer>
+
+<!-- SCRIPT -->
+<script src="vendor/jquery/jquery.min.js"></script>
+<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+<script src="assets/js/owl-carousel.js"></script>
+<script src="assets/js/custom.js"></script>
 
 </body>
 </html>
