@@ -1,119 +1,60 @@
 <!DOCTYPE html>
 <html lang="id">
-
 <head>
-  <meta charset="utf-8">
+  <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-
   <title>Wisata Alam Indonesia</title>
 
   <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/fontawesome.css">
-  <link rel="stylesheet" href="assets/css/templatemo-snapx-photography.css">
 </head>
 
 <body>
 
-<!-- HEADER -->
-<header class="header-area header-sticky">
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <div class="container">
-    <nav class="main-nav">
-      <a href="index.html" class="logo">
-        <img src="assets/images/logo.png">
-      </a>
+    <a class="navbar-brand">Wisata Alam</a>
 
-      <ul class="nav">
-        <li><a href="index.html" class="active">Beranda</a></li>
-        <li><a href="#">Rekomendasi</a></li>
-        <li><a href="#">Kategori</a></li>
-        <li><a href="#">Tentang</a></li>
-      </ul>
-
-      <div class="border-button">
-        <a href="#"><i class="fa fa-user"></i> Login</a>
-      </div>
-    </nav>
+    <ul class="navbar-nav ms-auto">
+      <li class="nav-item"><a class="nav-link" href="index.html">Beranda</a></li>
+      <li class="nav-item"><a class="nav-link" href="gunung.html">Gunung</a></li>
+      <li class="nav-item"><a class="nav-link" href="pantai.html">Pantai</a></li>
+      <li class="nav-item"><a class="nav-link" href="curug.html">Air Terjun</a></li>
+      <li class="nav-item"><a class="nav-link" href="login.html">Login</a></li>
+    </ul>
   </div>
-</header>
+</nav>
 
-<!-- BANNER -->
-<div class="main-banner">
-  <div class="container text-center">
-    <h2>Jelajahi <em>Keindahan Alam</em> Indonesia</h2>
-    <p>
-      Temukan berbagai tempat wisata alam terbaik di Indonesia seperti gunung, pantai, dan air terjun yang indah dan menenangkan.
-    </p>
-  </div>
+<!-- HERO -->
+<div class="container text-center mt-5">
+  <h1>Rekomendasi Wisata Alam Indonesia 🌿</h1>
+  <p>Temukan tempat wisata terbaik seperti gunung, pantai, dan air terjun.</p>
 </div>
 
-<!-- REKOMENDASI -->
-<section class="featured-items">
-  <div class="container">
-    <h4 class="text-center mb-4">Rekomendasi Tempat Wisata</h4>
-
-    <div class="row">
-
-      <div class="col-md-4">
-        <div class="item">
-          <img src="assets/images/featured-01.jpg" class="img-fluid">
-          <h5>Gunung Bromo</h5>
-          <p>Gunung terkenal di Jawa Timur dengan pemandangan sunrise yang indah.</p>
-        </div>
-      </div>
-
-      <div class="col-md-4">
-        <div class="item">
-          <img src="assets/images/featured-02.jpg" class="img-fluid">
-          <h5>Pantai Kuta</h5>
-          <p>Pantai populer di Bali dengan pasir putih dan ombak yang cocok untuk surfing.</p>
-        </div>
-      </div>
-
-      <div class="col-md-4">
-        <div class="item">
-          <img src="assets/images/featured-03.jpg" class="img-fluid">
-          <h5>Curug Cimahi</h5>
-          <p>Air terjun indah di Bandung yang cocok untuk wisata alam santai.</p>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
 <!-- KATEGORI -->
-<section class="popular-categories">
-  <div class="container">
-    <h4 class="text-center mb-4">Kategori Wisata</h4>
+<div class="container mt-5">
+  <div class="row text-center">
 
-    <div class="row text-center">
-
-      <div class="col-md-4">
-        <h5>Gunung</h5>
-        <p>Wisata pendakian dan alam pegunungan.</p>
-      </div>
-
-      <div class="col-md-4">
-        <h5>Pantai</h5>
-        <p>Pantai indah dengan pemandangan laut.</p>
-      </div>
-
-      <div class="col-md-4">
-        <h5>Air Terjun</h5>
-        <p>Curug dan air terjun yang segar dan alami.</p>
-      </div>
-
+    <div class="col-md-4">
+      <h3>Gunung</h3>
+      <p>Wisata pendakian dengan pemandangan indah.</p>
+      <a href="gunung.html" class="btn btn-primary">Lihat</a>
     </div>
+
+    <div class="col-md-4">
+      <h3>Pantai</h3>
+      <p>Pantai dengan pasir putih dan ombak indah.</p>
+      <a href="pantai.html" class="btn btn-primary">Lihat</a>
+    </div>
+
+    <div class="col-md-4">
+      <h3>Air Terjun</h3>
+      <p>Air terjun segar dan alami.</p>
+      <a href="curug.html" class="btn btn-primary">Lihat</a>
+    </div>
+
   </div>
-</section>
-
-<!-- FOOTER -->
-<footer class="text-center p-3">
-  <p>© 2026 Wisata Alam Indonesia</p>
-</footer>
-
-<script src="vendor/jquery/jquery.min.js"></script>
-<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+</div>
 
 </body>
 </html>
