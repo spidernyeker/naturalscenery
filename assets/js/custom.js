@@ -422,37 +422,3 @@
 
 
 })(window.jQuery);
-
-<script>
-document.addEventListener("DOMContentLoaded", function () {
-    // Mengambil elemen form login berdasarkan struktur di foto ke-2 & ke-3
-    const loginForm = document.querySelector(".user_login form");
-    const usernameInput = document.getElementById("username");
-    const passwordInput = document.getElementById("password");
-
-    if (loginForm) {
-        loginForm.addEventListener("submit", function (e) {
-            e.preventDefault(); // Mencegah halaman reload otomatis
-
-            // Tentukan username & password untuk tugasmu di sini
-            const usernameBenar = "admin";
-            const passwordBenar = "wisata123";
-
-            if (usernameInput.value === usernameBenar && passwordInput.value === passwordBenar) {
-                alert("Login Berhasil! Selamat datang di Direktori Wisata Alam Indonesia.");
-                
-                // Menutup modal popup secara otomatis setelah login sukses
-                const modal = document.getElementById("modal");
-                if (modal) {
-                    modal.style.display = "none";
-                }
-                
-                // OPSIONAL: Jika ingin diarahkan ke halaman khusus setelah login, buka baris di bawah:
-                // window.location.href = "dashboard.html"; 
-            } else {
-                alert("Username atau Password salah! Silakan coba lagi.");
-            }
-        });
-    }
-});
-</script>
