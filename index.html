@@ -1,331 +1,612 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Natural Scenery Indonesia</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<title>Natural Scenery Indonesia</title>
 
-  <style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-    *{
-      margin:0;
-      padding:0;
-      box-sizing:border-box;
-      font-family:'Poppins', sans-serif;
-      scroll-behavior:smooth;
-    }
+<style>
 
-    body{
-      background:#f5f7f6;
-    }
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins', sans-serif;
+scroll-behavior:smooth;
+}
 
-    nav{
-      width:100%;
-      padding:20px 8%;
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      position:fixed;
-      top:0;
-      z-index:1000;
-      background:rgba(0,0,0,0.4);
-      backdrop-filter:blur(10px);
-    }
+body{
+background:#f5f7f6;
+}
 
-    nav h2{
-      color:white;
-      font-size:28px;
-    }
+/* NAVBAR */
 
-    nav ul{
-      display:flex;
-      list-style:none;
-      gap:30px;
-    }
+nav{
 
-    nav ul li a{
-      text-decoration:none;
-      color:white;
-      transition:0.3s;
-    }
+width:100%;
 
-    nav ul li a:hover{
-      color:#90ee90;
-    }
+padding:20px 8%;
 
-    .hero{
-      width:100%;
-      height:100vh;
+display:flex;
+justify-content:space-between;
+align-items:center;
 
-      background:
-      linear-gradient(rgba(0,0,0,0.5),
-      rgba(0,0,0,0.5)),
-      url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?q=80&w=1400&auto=format&fit=crop');
+position:fixed;
+top:0;
 
-      background-size:cover;
-      background-position:center;
+z-index:1000;
 
-      display:flex;
-      justify-content:center;
-      align-items:center;
-      text-align:center;
+background:rgba(0,0,0,0.4);
 
-      padding:20px;
-    }
+backdrop-filter:blur(10px);
+}
 
-    .hero-content h1{
-      font-size:60px;
-      color:white;
-      margin-bottom:20px;
-    }
+nav h2{
 
-    .hero-content p{
-      color:white;
-      font-size:20px;
-      max-width:700px;
-      margin:auto;
-      margin-bottom:30px;
-    }
+color:white;
+font-size:28px;
+}
 
-    .hero-content a{
-      text-decoration:none;
-      background:#2e8b57;
-      color:white;
-      padding:15px 35px;
-      border-radius:50px;
-    }
+nav ul{
 
-    .categories{
-      padding:80px 8%;
-    }
+display:flex;
+list-style:none;
+gap:30px;
+}
 
-    .section-title{
-      text-align:center;
-      margin-bottom:50px;
-    }
+nav ul li a{
 
-    .section-title h2{
-      font-size:40px;
-      color:#2e8b57;
-    }
+text-decoration:none;
+color:white;
 
-    .section-title p{
-      color:#666;
-      margin-top:10px;
-    }
+transition:0.3s;
+}
 
-    .category-container{
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-      gap:25px;
-    }
+nav ul li a:hover{
 
-    .category-card{
-      background:white;
-      border-radius:20px;
-      overflow:hidden;
-      box-shadow:0 5px 15px rgba(0,0,0,0.1);
-      transition:0.3s;
-    }
+color:#90ee90;
+}
 
-    .category-card:hover{
-      transform:translateY(-10px);
-    }
+/* HERO */
 
-    .category-card img{
-      width:100%;
-      height:220px;
-      object-fit:cover;
-    }
+.hero{
 
-    .category-content{
-      padding:20px;
-    }
+width:100%;
+height:100vh;
 
-    .category-content h3{
-      color:#2e8b57;
-      margin-bottom:10px;
-    }
+background:
+linear-gradient(rgba(0,0,0,0.5),
+rgba(0,0,0,0.5)),
+url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?q=80&w=1400&auto=format&fit=crop');
 
-    .category-content p{
-      color:#666;
-      font-size:14px;
-      margin-bottom:20px;
-    }
+background-size:cover;
+background-position:center;
 
-    .places{
-      padding:80px 8%;
-      background:#edf4ef;
-    }
+display:flex;
+justify-content:center;
+align-items:center;
 
-    .place-container{
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-      gap:30px;
-    }
+text-align:center;
 
-    .place-card{
-      background:white;
-      border-radius:20px;
-      overflow:hidden;
-      box-shadow:0 5px 15px rgba(0,0,0,0.1);
-    }
+padding:20px;
+}
 
-    .place-card img{
-      width:100%;
-      height:250px;
-      object-fit:cover;
-    }
+.hero-content h1{
 
-    .place-content{
-      padding:20px;
-    }
+font-size:60px;
 
-    .place-content h3{
-      color:#2e8b57;
-      margin-bottom:10px;
-    }
+color:white;
 
-    .place-content p{
-      color:#666;
-      font-size:14px;
-      margin-bottom:20px;
-    }
+margin-bottom:20px;
+}
 
-    .maps-btn{
-      text-decoration:none;
-      background:#2e8b57;
-      color:white;
-      padding:10px 20px;
-      border-radius:30px;
-      display:inline-block;
-    }
+.hero-content p{
 
-    footer{
-      background:#1d3c2f;
-      color:white;
-      text-align:center;
-      padding:30px;
-    }
+color:white;
 
-  </style>
+font-size:20px;
+
+max-width:700px;
+
+margin:auto;
+
+margin-bottom:30px;
+}
+
+.hero-content a{
+
+text-decoration:none;
+
+background:#2e8b57;
+
+color:white;
+
+padding:15px 35px;
+
+border-radius:50px;
+
+transition:0.3s;
+}
+
+.hero-content a:hover{
+
+background:#246b45;
+}
+
+/* KATEGORI */
+
+.categories{
+
+padding:80px 8%;
+}
+
+.section-title{
+
+text-align:center;
+
+margin-bottom:50px;
+}
+
+.section-title h2{
+
+font-size:40px;
+
+color:#2e8b57;
+}
+
+.section-title p{
+
+color:#666;
+
+margin-top:10px;
+}
+
+.category-container{
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+
+gap:25px;
+}
+
+.category-card{
+
+background:white;
+
+border-radius:20px;
+
+overflow:hidden;
+
+box-shadow:0 5px 15px rgba(0,0,0,0.1);
+
+transition:0.3s;
+}
+
+.category-card:hover{
+
+transform:translateY(-10px);
+}
+
+.category-card img{
+
+width:100%;
+height:220px;
+
+object-fit:cover;
+}
+
+.category-content{
+
+padding:20px;
+}
+
+.category-content h3{
+
+color:#2e8b57;
+
+margin-bottom:10px;
+}
+
+.category-content p{
+
+color:#666;
+
+font-size:14px;
+}
+
+/* WISATA */
+
+.wisata{
+
+padding:80px 8%;
+
+background:#edf4ef;
+}
+
+.place-container{
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+
+gap:30px;
+}
+
+.place-card{
+
+background:white;
+
+border-radius:20px;
+
+overflow:hidden;
+
+box-shadow:0 5px 15px rgba(0,0,0,0.1);
+
+transition:0.3s;
+}
+
+.place-card:hover{
+
+transform:translateY(-10px);
+}
+
+.place-card img{
+
+width:100%;
+height:250px;
+
+object-fit:cover;
+}
+
+.place-content{
+
+padding:20px;
+}
+
+.place-content h3{
+
+color:#2e8b57;
+
+margin-bottom:10px;
+}
+
+.place-content p{
+
+color:#666;
+
+font-size:14px;
+
+margin-bottom:20px;
+}
+
+.maps-btn{
+
+text-decoration:none;
+
+background:#2e8b57;
+
+color:white;
+
+padding:10px 20px;
+
+border-radius:30px;
+
+display:inline-block;
+
+transition:0.3s;
+}
+
+.maps-btn:hover{
+
+background:#246b45;
+}
+
+/* FOOTER */
+
+footer{
+
+background:#1d3c2f;
+
+color:white;
+
+text-align:center;
+
+padding:30px;
+}
+
+/* RESPONSIVE */
+
+@media(max-width:768px){
+
+nav{
+
+flex-direction:column;
+
+gap:15px;
+}
+
+.hero-content h1{
+
+font-size:40px;
+}
+
+.hero-content p{
+
+font-size:16px;
+}
+
+}
+
+</style>
 </head>
 <body>
 
-  <nav>
+<!-- NAVBAR -->
 
-    <h2>NatureID</h2>
+<nav>
 
-    <ul>
-      <li><a href="#">Home</a></li>
-      <li><a href="#kategori">Kategori</a></li>
-      <li><a href="#wisata">Wisata</a></li>
+<h2>NatureID</h2>
 
-      <li>
-        <a href="login.html">
-          Login
-        </a>
-      </li>
-    </ul>
+<ul>
 
-  </nav>
+<li>
+<a href="#home">
+Home
+</a>
+</li>
 
-  <section class="hero">
+<li>
+<a href="#kategori">
+Kategori
+</a>
+</li>
 
-    <div class="hero-content">
+<li>
+<a href="#wisata">
+Wisata
+</a>
+</li>
 
-      <h1>
-        Eksplor Keindahan Alam Indonesia
-      </h1>
+<li>
+<a href="login.html">
+Login
+</a>
+</li>
 
-      <p>
-        Temukan gunung, pantai, dan wisata alam terbaik di Indonesia 🌿
-      </p>
+</ul>
 
-      <a href="#kategori">
-        Jelajahi Sekarang
-      </a>
+</nav>
 
-    </div>
+<!-- HERO -->
 
-  </section>
+<section class="hero" id="home">
 
-  <section class="categories" id="kategori">
+<div class="hero-content">
 
-    <div class="section-title">
+<h1>
+Eksplor Keindahan Alam Indonesia
+</h1>
 
-      <h2>Kategori Wisata</h2>
+<p>
+Temukan gunung, pantai, air terjun,
+dan wisata alam terbaik di Indonesia 🌿
+</p>
 
-      <p>
-        Pilih destinasi favoritmu ✨
-      </p>
+<a href="#kategori">
+Jelajahi Sekarang
+</a>
 
-    </div>
+</div>
 
-    <div class="category-container">
+</section>
 
-      <div class="category-card">
+<!-- KATEGORI -->
 
-        <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?q=80&w=1200&auto=format&fit=crop">
+<section class="categories" id="kategori">
 
-        <div class="category-content">
+<div class="section-title">
 
-          <h3>Gunung</h3>
+<h2>Kategori Wisata</h2>
 
-          <p>
-            Nikmati gunung dengan sunrise indah dan udara sejuk.
-          </p>
+<p>
+Pilih destinasi favoritmu ✨
+</p>
 
-        </div>
+</div>
 
-      </div>
+<div class="category-container">
 
-      <div class="category-card">
+<!-- GUNUNG -->
 
-        <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=1200&auto=format&fit=crop">
+<div class="category-card">
 
-        <div class="category-content">
+<img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?q=80&w=1200&auto=format&fit=crop">
 
-          <h3>Pantai</h3>
+<div class="category-content">
 
-          <p>
-            Pantai eksotis dengan pasir putih dan laut biru.
-          </p>
+<h3>Gunung</h3>
 
-        </div>
+<p>
+Nikmati gunung dengan sunrise indah dan udara sejuk.
+</p>
 
-      </div>
+</div>
 
-      <div class="category-card">
+</div>
 
-        <img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?q=80&w=1200&auto=format&fit=crop">
+<!-- PANTAI -->
 
-        <div class="category-content">
+<div class="category-card">
 
-          <h3>Danau</h3>
+<img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=1200&auto=format&fit=crop">
 
-          <p>
-            Danau alami Indonesia dengan panorama menenangkan.
-          </p>
+<div class="category-content">
 
-        </div>
+<h3>Pantai</h3>
 
-      </div>
+<p>
+Pantai eksotis dengan pasir putih dan laut biru.
+</p>
 
-    </div>
+</div>
 
-  </section>
+</div>
 
-  <footer>
+<!-- DANAU -->
 
-    <p>
-      © 2026 Natural Scenery Indonesia 🌿
-    </p>
+<div class="category-card">
 
-  </footer>
+<img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?q=80&w=1200&auto=format&fit=crop">
+
+<div class="category-content">
+
+<h3>Danau</h3>
+
+<p>
+Danau alami Indonesia dengan panorama menenangkan.
+</p>
+
+</div>
+
+</div>
+
+<!-- AIR TERJUN -->
+
+<div class="category-card">
+
+<img src="https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0?q=80&w=1200&auto=format&fit=crop">
+
+<div class="category-content">
+
+<h3>Air Terjun</h3>
+
+<p>
+Air terjun tersembunyi dengan suasana segar alami.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- WISATA -->
+
+<section class="wisata" id="wisata">
+
+<div class="section-title">
+
+<h2>Rekomendasi Wisata</h2>
+
+<p>
+Tempat populer yang wajib dikunjungi 🌏
+</p>
+
+</div>
+
+<div class="place-container">
+
+<!-- BROMO -->
+
+<div class="place-card">
+
+<img src="https://images.unsplash.com/photo-1519046904884-53103b34b206?q=80&w=1200&auto=format&fit=crop">
+
+<div class="place-content">
+
+<h3>Gunung Bromo</h3>
+
+<p>
+Gunung terkenal di Jawa Timur dengan sunrise memukau.
+</p>
+
+<a
+class="maps-btn"
+href="https://www.google.com/maps/place/Gunung+Bromo"
+target="_blank">
+
+Lihat Maps
+
+</a>
+
+</div>
+
+</div>
+
+<!-- RAJA AMPAT -->
+
+<div class="place-card">
+
+<img src="https://images.unsplash.com/photo-1500375592092-40eb2168fd21?q=80&w=1200&auto=format&fit=crop">
+
+<div class="place-content">
+
+<h3>Raja Ampat</h3>
+
+<p>
+Surga bawah laut Indonesia dengan panorama eksotis.
+</p>
+
+<a
+class="maps-btn"
+href="https://www.google.com/maps/place/Raja+Ampat"
+target="_blank">
+
+Lihat Maps
+
+</a>
+
+</div>
+
+</div>
+
+<!-- DANAU TOBA -->
+
+<div class="place-card">
+
+<img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=1200&auto=format&fit=crop">
+
+<div class="place-content">
+
+<h3>Danau Toba</h3>
+
+<p>
+Danau vulkanik terbesar di Indonesia dengan panorama indah.
+</p>
+
+<a
+class="maps-btn"
+href="https://www.google.com/maps/place/Danau+Toba"
+target="_blank">
+
+Lihat Maps
+
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- FOOTER -->
+
+<footer>
+
+<p>
+© 2026 Natural Scenery Indonesia 🌿
+</p>
+
+</footer>
 
 </body>
 </html>
