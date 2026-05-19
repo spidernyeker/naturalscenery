@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>Natural Scenery Indonesia</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -15,11 +16,98 @@
       padding:0;
       box-sizing:border-box;
       font-family:'Poppins', sans-serif;
+      scroll-behavior:smooth;
     }
 
     body{
       background:#f5f7f6;
-      color:#222;
+    }
+
+    /* LOGIN */
+
+    #loginPage{
+      width:100%;
+      height:100vh;
+
+      display:flex;
+      justify-content:center;
+      align-items:center;
+
+      background:
+      linear-gradient(rgba(0,0,0,0.5),
+      rgba(0,0,0,0.5)),
+      url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?q=80&w=1400&auto=format&fit=crop');
+
+      background-size:cover;
+      background-position:center;
+    }
+
+    .login-box{
+      width:350px;
+
+      background:rgba(255,255,255,0.15);
+
+      backdrop-filter:blur(10px);
+
+      padding:40px;
+
+      border-radius:20px;
+
+      text-align:center;
+
+      color:white;
+    }
+
+    .login-box h1{
+      margin-bottom:30px;
+      font-size:35px;
+    }
+
+    .login-box input{
+      width:100%;
+      padding:15px;
+
+      margin:10px 0;
+
+      border:none;
+      outline:none;
+
+      border-radius:10px;
+    }
+
+    .login-box button{
+      width:100%;
+      padding:15px;
+
+      border:none;
+      border-radius:10px;
+
+      margin-top:20px;
+
+      background:#2e8b57;
+
+      color:white;
+
+      font-size:16px;
+
+      cursor:pointer;
+
+      transition:0.3s;
+    }
+
+    .login-box button:hover{
+      background:#246b45;
+    }
+
+    #error{
+      margin-top:15px;
+      color:#ffb3b3;
+    }
+
+    /* WEBSITE */
+
+    #website{
+      display:none;
     }
 
     /* NAVBAR */
@@ -27,13 +115,18 @@
     nav{
       width:100%;
       padding:20px 8%;
+
       display:flex;
       justify-content:space-between;
       align-items:center;
+
       position:fixed;
       top:0;
+
       z-index:1000;
+
       background:rgba(0,0,0,0.4);
+
       backdrop-filter:blur(10px);
     }
 
@@ -44,14 +137,13 @@
 
     nav ul{
       display:flex;
-      gap:30px;
       list-style:none;
+      gap:30px;
     }
 
     nav ul li a{
       text-decoration:none;
       color:white;
-      font-weight:500;
       transition:0.3s;
     }
 
@@ -64,46 +156,56 @@
     .hero{
       width:100%;
       height:100vh;
+
       background:
       linear-gradient(rgba(0,0,0,0.5),
       rgba(0,0,0,0.5)),
       url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?q=80&w=1400&auto=format&fit=crop');
+
       background-size:cover;
       background-position:center;
+
       display:flex;
       justify-content:center;
       align-items:center;
+
       text-align:center;
+
       padding:20px;
     }
 
     .hero-content h1{
       font-size:60px;
       color:white;
+
       margin-bottom:20px;
     }
 
     .hero-content p{
       color:white;
       font-size:20px;
+
       max-width:700px;
+
       margin:auto;
       margin-bottom:30px;
     }
 
     .hero-content a{
-      display:inline-block;
-      padding:15px 35px;
+      text-decoration:none;
+
       background:#2e8b57;
       color:white;
-      text-decoration:none;
+
+      padding:15px 35px;
+
       border-radius:50px;
+
       transition:0.3s;
     }
 
     .hero-content a:hover{
       background:#246b45;
-      transform:scale(1.05);
     }
 
     /* CATEGORY */
@@ -120,24 +222,29 @@
     .section-title h2{
       font-size:40px;
       color:#2e8b57;
-      margin-bottom:10px;
     }
 
     .section-title p{
       color:#666;
+      margin-top:10px;
     }
 
     .category-container{
       display:grid;
       grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+
       gap:25px;
     }
 
     .category-card{
       background:white;
+
       border-radius:20px;
+
       overflow:hidden;
+
       box-shadow:0 5px 15px rgba(0,0,0,0.1);
+
       transition:0.3s;
     }
 
@@ -156,53 +263,58 @@
     }
 
     .category-content h3{
-      margin-bottom:10px;
       color:#2e8b57;
+      margin-bottom:10px;
     }
 
     .category-content p{
-      font-size:14px;
       color:#666;
+      font-size:14px;
       margin-bottom:20px;
     }
 
-    .category-content a{
-      text-decoration:none;
-      background:#2e8b57;
-      color:white;
+    .category-content button{
       padding:10px 20px;
+
+      border:none;
       border-radius:30px;
-      display:inline-block;
-      transition:0.3s;
+
+      background:#2e8b57;
+
+      color:white;
+
+      cursor:pointer;
     }
 
-    .category-content a:hover{
-      background:#246b45;
-    }
-
-    /* RECOMMENDATION */
+    /* PLACES */
 
     .places{
       padding:80px 8%;
+
       background:#edf4ef;
     }
 
     .place-container{
       display:grid;
       grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+
       gap:30px;
     }
 
     .place-card{
       background:white;
+
       border-radius:20px;
+
       overflow:hidden;
+
       box-shadow:0 5px 15px rgba(0,0,0,0.1);
     }
 
     .place-card img{
       width:100%;
       height:250px;
+
       object-fit:cover;
     }
 
@@ -211,36 +323,38 @@
     }
 
     .place-content h3{
-      margin-bottom:10px;
       color:#2e8b57;
+      margin-bottom:10px;
     }
 
     .place-content p{
       color:#666;
       font-size:14px;
-      margin-bottom:15px;
+      margin-bottom:20px;
     }
 
     .maps-btn{
-      display:inline-block;
-      padding:10px 20px;
+      text-decoration:none;
+
       background:#2e8b57;
       color:white;
-      text-decoration:none;
-      border-radius:30px;
-      transition:0.3s;
-    }
 
-    .maps-btn:hover{
-      background:#246b45;
+      padding:10px 20px;
+
+      border-radius:30px;
+
+      display:inline-block;
     }
 
     /* FOOTER */
 
     footer{
       background:#1d3c2f;
+
       color:white;
+
       text-align:center;
+
       padding:30px;
     }
 
@@ -267,212 +381,311 @@
 </head>
 <body>
 
-  <!-- NAVBAR -->
+  <!-- LOGIN PAGE -->
 
-  <nav>
-    <h2>NatureID</h2>
+  <div id="loginPage">
 
-    <ul>
-      <li><a href="#">Home</a></li>
-      <li><a href="#kategori">Kategori</a></li>
-      <li><a href="#wisata">Wisata</a></li>
-      <li><a href="#">Tentang</a></li>
-    </ul>
-  </nav>
+    <div class="login-box">
 
-  <!-- HERO -->
+      <h1>Login</h1>
 
-  <section class="hero">
+      <input
+      type="text"
+      id="username"
+      placeholder="Username">
 
-    <div class="hero-content">
-      <h1>Eksplor Keindahan Alam Indonesia</h1>
+      <input
+      type="password"
+      id="password"
+      placeholder="Password">
+
+      <button onclick="login()">
+        Login
+      </button>
+
+      <p id="error"></p>
+
+    </div>
+
+  </div>
+
+  <!-- WEBSITE -->
+
+  <div id="website">
+
+    <!-- NAVBAR -->
+
+    <nav>
+
+      <h2>NatureID</h2>
+
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#kategori">Kategori</a></li>
+        <li><a href="#wisata">Wisata</a></li>
+      </ul>
+
+    </nav>
+
+    <!-- HERO -->
+
+    <section class="hero">
+
+      <div class="hero-content">
+
+        <h1>
+          Eksplor Keindahan Alam Indonesia
+        </h1>
+
+        <p>
+          Temukan gunung, pantai, dan wisata alam terbaik di Indonesia 🌿
+        </p>
+
+        <a href="#kategori">
+          Jelajahi Sekarang
+        </a>
+
+      </div>
+
+    </section>
+
+    <!-- CATEGORY -->
+
+    <section class="categories" id="kategori">
+
+      <div class="section-title">
+
+        <h2>Kategori Wisata</h2>
+
+        <p>
+          Pilih destinasi favoritmu ✨
+        </p>
+
+      </div>
+
+      <div class="category-container">
+
+        <!-- GUNUNG -->
+
+        <div class="category-card">
+
+          <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?q=80&w=1200&auto=format&fit=crop">
+
+          <div class="category-content">
+
+            <h3>Gunung</h3>
+
+            <p>
+              Nikmati gunung dengan sunrise indah dan udara sejuk.
+            </p>
+
+            <button>Lihat</button>
+
+          </div>
+
+        </div>
+
+        <!-- PANTAI -->
+
+        <div class="category-card">
+
+          <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=1200&auto=format&fit=crop">
+
+          <div class="category-content">
+
+            <h3>Pantai</h3>
+
+            <p>
+              Pantai eksotis dengan pasir putih dan laut biru.
+            </p>
+
+            <button>Lihat</button>
+
+          </div>
+
+        </div>
+
+        <!-- DANAU -->
+
+        <div class="category-card">
+
+          <img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?q=80&w=1200&auto=format&fit=crop">
+
+          <div class="category-content">
+
+            <h3>Danau</h3>
+
+            <p>
+              Danau alami Indonesia dengan panorama menenangkan.
+            </p>
+
+            <button>Lihat</button>
+
+          </div>
+
+        </div>
+
+        <!-- AIR TERJUN -->
+
+        <div class="category-card">
+
+          <img src="https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0?q=80&w=1200&auto=format&fit=crop">
+
+          <div class="category-content">
+
+            <h3>Air Terjun</h3>
+
+            <p>
+              Air terjun tersembunyi dengan suasana segar alami.
+            </p>
+
+            <button>Lihat</button>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- RECOMMENDATION -->
+
+    <section class="places" id="wisata">
+
+      <div class="section-title">
+
+        <h2>Rekomendasi Wisata</h2>
+
+        <p>
+          Tempat populer yang wajib dikunjungi 🌏
+        </p>
+
+      </div>
+
+      <div class="place-container">
+
+        <!-- BROMO -->
+
+        <div class="place-card">
+
+          <img src="https://images.unsplash.com/photo-1519046904884-53103b34b206?q=80&w=1200&auto=format&fit=crop">
+
+          <div class="place-content">
+
+            <h3>Gunung Bromo</h3>
+
+            <p>
+              Gunung terkenal di Jawa Timur dengan sunrise yang memukau.
+            </p>
+
+            <a
+            class="maps-btn"
+            href="https://maps.google.com"
+            target="_blank">
+              Lihat Maps
+            </a>
+
+          </div>
+
+        </div>
+
+        <!-- RAJA AMPAT -->
+
+        <div class="place-card">
+
+          <img src="https://images.unsplash.com/photo-1500375592092-40eb2168fd21?q=80&w=1200&auto=format&fit=crop">
+
+          <div class="place-content">
+
+            <h3>Raja Ampat</h3>
+
+            <p>
+              Surga bawah laut Indonesia dengan pemandangan eksotis.
+            </p>
+
+            <a
+            class="maps-btn"
+            href="https://maps.google.com"
+            target="_blank">
+              Lihat Maps
+            </a>
+
+          </div>
+
+        </div>
+
+        <!-- TOBA -->
+
+        <div class="place-card">
+
+          <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=1200&auto=format&fit=crop">
+
+          <div class="place-content">
+
+            <h3>Danau Toba</h3>
+
+            <p>
+              Danau vulkanik terbesar di Indonesia dengan panorama indah.
+            </p>
+
+            <a
+            class="maps-btn"
+            href="https://maps.google.com"
+            target="_blank">
+              Lihat Maps
+            </a>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- FOOTER -->
+
+    <footer>
 
       <p>
-        Temukan gunung, pantai, air terjun,
-        dan tempat wisata alam terbaik di Indonesia.
+        © 2026 Natural Scenery Indonesia 🌿
       </p>
 
-      <a href="#kategori">Jelajahi Sekarang</a>
-    </div>
+    </footer>
 
-  </section>
+  </div>
 
-  <!-- CATEGORY -->
+  <!-- JAVASCRIPT -->
 
-  <section class="categories" id="kategori">
+  <script>
 
-    <div class="section-title">
-      <h2>Kategori Wisata</h2>
+    function login(){
 
-      <p>
-        Pilih destinasi alam favoritmu 🌿
-      </p>
-    </div>
+      let username =
+      document.getElementById("username").value;
 
-    <div class="category-container">
+      let password =
+      document.getElementById("password").value;
 
-      <!-- GUNUNG -->
+      if(username === "Heri" && password === "123"){
 
-      <div class="category-card">
-        <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?q=80&w=1200&auto=format&fit=crop">
+        document.getElementById("loginPage").style.display = "none";
 
-        <div class="category-content">
-          <h3>Gunung</h3>
+        document.getElementById("website").style.display = "block";
 
-          <p>
-            Nikmati keindahan gunung Indonesia dengan udara sejuk dan sunrise menakjubkan.
-          </p>
+      }
 
-          <a href="#">Lihat Gunung</a>
-        </div>
-      </div>
+      else{
 
-      <!-- PANTAI -->
+        document.getElementById("error").innerHTML =
+        "Username atau password salah";
 
-      <div class="category-card">
-        <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=1200&auto=format&fit=crop">
+      }
 
-        <div class="category-content">
-          <h3>Pantai</h3>
+    }
 
-          <p>
-            Temukan pantai eksotis dengan pasir putih dan laut biru yang indah.
-          </p>
-
-          <a href="#">Lihat Pantai</a>
-        </div>
-      </div>
-
-      <!-- DANAU -->
-
-      <div class="category-card">
-        <img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?q=80&w=1200&auto=format&fit=crop">
-
-        <div class="category-content">
-          <h3>Danau</h3>
-
-          <p>
-            Jelajahi danau alami Indonesia dengan pemandangan yang menenangkan.
-          </p>
-
-          <a href="#">Lihat Danau</a>
-        </div>
-      </div>
-
-      <!-- AIR TERJUN -->
-
-      <div class="category-card">
-        <img src="https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0?q=80&w=1200&auto=format&fit=crop">
-
-        <div class="category-content">
-          <h3>Air Terjun</h3>
-
-          <p>
-            Rasakan kesegaran air terjun alami yang tersembunyi di Indonesia.
-          </p>
-
-          <a href="#">Lihat Air Terjun</a>
-        </div>
-      </div>
-
-    </div>
-
-  </section>
-
-  <!-- RECOMMENDATION -->
-
-  <section class="places" id="wisata">
-
-    <div class="section-title">
-      <h2>Rekomendasi Wisata</h2>
-
-      <p>
-        Tempat populer yang wajib kamu kunjungi ✨
-      </p>
-    </div>
-
-    <div class="place-container">
-
-      <!-- BROMO -->
-
-      <div class="place-card">
-
-        <img src="https://images.unsplash.com/photo-1519046904884-53103b34b206?q=80&w=1200&auto=format&fit=crop">
-
-        <div class="place-content">
-
-          <h3>Gunung Bromo</h3>
-
-          <p>
-            Gunung terkenal di Jawa Timur dengan sunrise yang sangat indah dan lautan pasir yang ikonik.
-          </p>
-
-          <a class="maps-btn"
-          href="https://maps.google.com"
-          target="_blank">
-            Lihat Maps
-          </a>
-
-        </div>
-      </div>
-
-      <!-- RAJA AMPAT -->
-
-      <div class="place-card">
-
-        <img src="https://images.unsplash.com/photo-1500375592092-40eb2168fd21?q=80&w=1200&auto=format&fit=crop">
-
-        <div class="place-content">
-
-          <h3>Raja Ampat</h3>
-
-          <p>
-            Surga bawah laut Indonesia dengan pulau-pulau eksotis dan laut yang jernih.
-          </p>
-
-          <a class="maps-btn"
-          href="https://maps.google.com"
-          target="_blank">
-            Lihat Maps
-          </a>
-
-        </div>
-      </div>
-
-      <!-- TOBA -->
-
-      <div class="place-card">
-
-        <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=1200&auto=format&fit=crop">
-
-        <div class="place-content">
-
-          <h3>Danau Toba</h3>
-
-          <p>
-            Danau vulkanik terbesar di Indonesia dengan panorama yang sangat memukau.
-          </p>
-
-          <a class="maps-btn"
-          href="https://maps.google.com"
-          target="_blank">
-            Lihat Maps
-          </a>
-
-        </div>
-      </div>
-
-    </div>
-
-  </section>
-
-  <!-- FOOTER -->
-
-  <footer>
-    <p>
-      © 2026 Natural Scenery Indonesia | Explore Nature 🌿
-    </p>
-  </footer>
+  </script>
 
 </body>
 </html>
