@@ -62,7 +62,6 @@ nav ul li a{
 
 text-decoration:none;
 color:white;
-
 transition:0.3s;
 }
 
@@ -98,23 +97,21 @@ padding:20px;
 .hero-content h1{
 
 font-size:60px;
-
 color:white;
-
 margin-bottom:20px;
 }
 
 .hero-content p{
 
 color:white;
-
 font-size:20px;
 
 max-width:700px;
 
 margin:auto;
-
 margin-bottom:30px;
+
+line-height:1.8;
 }
 
 .hero-content a{
@@ -147,21 +144,18 @@ padding:80px 8%;
 .section-title{
 
 text-align:center;
-
 margin-bottom:50px;
 }
 
 .section-title h2{
 
 font-size:40px;
-
 color:#2e8b57;
 }
 
 .section-title p{
 
 color:#666;
-
 margin-top:10px;
 }
 
@@ -208,15 +202,48 @@ padding:20px;
 .category-content h3{
 
 color:#2e8b57;
-
 margin-bottom:10px;
 }
 
 .category-content p{
 
 color:#666;
-
 font-size:14px;
+line-height:1.7;
+}
+
+/* FILTER */
+
+.filter-buttons{
+
+display:flex;
+justify-content:center;
+gap:15px;
+flex-wrap:wrap;
+
+margin-bottom:40px;
+}
+
+.filter-buttons button{
+
+padding:12px 25px;
+
+border:none;
+
+border-radius:30px;
+
+background:#2e8b57;
+
+color:white;
+
+cursor:pointer;
+
+transition:0.3s;
+}
+
+.filter-buttons button:hover{
+
+background:#246b45;
 }
 
 /* WISATA */
@@ -232,7 +259,7 @@ background:#edf4ef;
 
 display:grid;
 
-grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
 
 gap:30px;
 }
@@ -271,8 +298,8 @@ padding:20px;
 .place-content h3{
 
 color:#2e8b57;
-
-margin-bottom:10px;
+margin-bottom:15px;
+font-size:24px;
 }
 
 .place-content p{
@@ -282,6 +309,8 @@ color:#666;
 font-size:14px;
 
 margin-bottom:20px;
+
+line-height:1.8;
 }
 
 .maps-btn{
@@ -326,7 +355,6 @@ padding:30px;
 nav{
 
 flex-direction:column;
-
 gap:15px;
 }
 
@@ -355,27 +383,19 @@ font-size:16px;
 <ul>
 
 <li>
-<a href="#home">
-Home
-</a>
+<a href="#home">Home</a>
 </li>
 
 <li>
-<a href="#kategori">
-Kategori
-</a>
+<a href="#kategori">Kategori</a>
 </li>
 
 <li>
-<a href="#wisata">
-Wisata
-</a>
+<a href="#wisata">Wisata</a>
 </li>
 
 <li>
-<a href="login.html">
-Login
-</a>
+<a href="login.html">Login</a>
 </li>
 
 </ul>
@@ -393,8 +413,9 @@ Eksplor Keindahan Alam Indonesia
 </h1>
 
 <p>
-Temukan gunung, pantai, air terjun,
-dan wisata alam terbaik di Indonesia 🌿
+Temukan berbagai destinasi wisata alam terbaik di Indonesia,
+mulai dari gunung, pantai, danau, air terjun, pulau,
+hingga hutan tropis yang memukau 🌿
 </p>
 
 <a href="#kategori">
@@ -414,14 +435,12 @@ Jelajahi Sekarang
 <h2>Kategori Wisata</h2>
 
 <p>
-Pilih destinasi favoritmu ✨
+Pilih kategori destinasi favoritmu ✨
 </p>
 
 </div>
 
 <div class="category-container">
-
-<!-- GUNUNG -->
 
 <div class="category-card">
 
@@ -432,14 +451,13 @@ Pilih destinasi favoritmu ✨
 <h3>Gunung</h3>
 
 <p>
-Nikmati gunung dengan sunrise indah dan udara sejuk.
+Destinasi pegunungan dengan udara sejuk,
+sunrise indah, dan pemandangan alam memukau.
 </p>
 
 </div>
 
 </div>
-
-<!-- PANTAI -->
 
 <div class="category-card">
 
@@ -450,32 +468,30 @@ Nikmati gunung dengan sunrise indah dan udara sejuk.
 <h3>Pantai</h3>
 
 <p>
-Pantai eksotis dengan pasir putih dan laut biru.
+Pantai eksotis dengan pasir putih,
+ombak indah, dan panorama laut tropis.
 </p>
 
 </div>
 
 </div>
 
-<!-- DANAU -->
-
 <div class="category-card">
 
-<img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?q=80&w=1200&auto=format&fit=crop">
+<img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=1200&auto=format&fit=crop">
 
 <div class="category-content">
 
 <h3>Danau</h3>
 
 <p>
-Danau alami Indonesia dengan panorama menenangkan.
+Danau alami Indonesia dengan suasana tenang
+dan panorama yang menenangkan.
 </p>
 
 </div>
 
 </div>
-
-<!-- AIR TERJUN -->
 
 <div class="category-card">
 
@@ -486,7 +502,42 @@ Danau alami Indonesia dengan panorama menenangkan.
 <h3>Air Terjun</h3>
 
 <p>
-Air terjun tersembunyi dengan suasana segar alami.
+Air terjun alami dengan suasana segar
+dan pemandangan hijau yang indah.
+</p>
+
+</div>
+
+</div>
+
+<div class="category-card">
+
+<img src="https://images.unsplash.com/photo-1528127269322-539801943592?q=80&w=1200&auto=format&fit=crop">
+
+<div class="category-content">
+
+<h3>Pulau</h3>
+
+<p>
+Pulau tropis Indonesia dengan laut jernih
+dan panorama eksotis yang memanjakan mata.
+</p>
+
+</div>
+
+</div>
+
+<div class="category-card">
+
+<img src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?q=80&w=1200&auto=format&fit=crop">
+
+<div class="category-content">
+
+<h3>Hutan</h3>
+
+<p>
+Hutan tropis alami dengan udara segar
+dan keanekaragaman hayati Indonesia.
 </p>
 
 </div>
@@ -506,8 +557,42 @@ Air terjun tersembunyi dengan suasana segar alami.
 <h2>Rekomendasi Wisata</h2>
 
 <p>
-Tempat populer yang wajib dikunjungi 🌏
+Review tempat wisata populer di Indonesia 🌏
 </p>
+
+</div>
+
+<!-- FILTER -->
+
+<div class="filter-buttons">
+
+<button onclick="filterSelection('all')">
+Semua
+</button>
+
+<button onclick="filterSelection('gunung')">
+Gunung
+</button>
+
+<button onclick="filterSelection('pantai')">
+Pantai
+</button>
+
+<button onclick="filterSelection('danau')">
+Danau
+</button>
+
+<button onclick="filterSelection('airterjun')">
+Air Terjun
+</button>
+
+<button onclick="filterSelection('pulau')">
+Pulau
+</button>
+
+<button onclick="filterSelection('hutan')">
+Hutan
+</button>
 
 </div>
 
@@ -515,7 +600,7 @@ Tempat populer yang wajib dikunjungi 🌏
 
 <!-- BROMO -->
 
-<div class="place-card">
+<div class="place-card gunung">
 
 <img src="https://images.unsplash.com/photo-1519046904884-53103b34b206?q=80&w=1200&auto=format&fit=crop">
 
@@ -524,7 +609,19 @@ Tempat populer yang wajib dikunjungi 🌏
 <h3>Gunung Bromo</h3>
 
 <p>
-Gunung terkenal di Jawa Timur dengan sunrise memukau.
+
+⭐ 4.9/5
+
+<br><br>
+
+Gunung Bromo merupakan salah satu destinasi wisata
+paling terkenal di Indonesia. Tempat ini menawarkan
+pemandangan sunrise yang sangat indah dengan lautan
+pasir luas dan udara pegunungan yang sejuk.
+
+Cocok untuk camping, jeep tour,
+dan berburu foto aesthetic 🌄
+
 </p>
 
 <a
@@ -542,7 +639,7 @@ Lihat Maps
 
 <!-- RAJA AMPAT -->
 
-<div class="place-card">
+<div class="place-card pantai">
 
 <img src="https://images.unsplash.com/photo-1500375592092-40eb2168fd21?q=80&w=1200&auto=format&fit=crop">
 
@@ -551,7 +648,17 @@ Lihat Maps
 <h3>Raja Ampat</h3>
 
 <p>
-Surga bawah laut Indonesia dengan panorama eksotis.
+
+⭐ 5.0/5
+
+<br><br>
+
+Raja Ampat dikenal sebagai surga bawah laut Indonesia
+dengan air laut jernih dan gugusan pulau yang sangat indah.
+
+Tempat ini cocok untuk snorkeling,
+diving, dan healing menikmati alam 🌊
+
 </p>
 
 <a
@@ -569,7 +676,7 @@ Lihat Maps
 
 <!-- DANAU TOBA -->
 
-<div class="place-card">
+<div class="place-card danau">
 
 <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=1200&auto=format&fit=crop">
 
@@ -578,12 +685,134 @@ Lihat Maps
 <h3>Danau Toba</h3>
 
 <p>
-Danau vulkanik terbesar di Indonesia dengan panorama indah.
+
+⭐ 4.8/5
+
+<br><br>
+
+Danau Toba merupakan danau vulkanik terbesar
+di Indonesia yang memiliki panorama sangat indah
+dan udara yang menenangkan.
+
+Tempat ini cocok untuk liburan keluarga
+dan menikmati suasana alam yang damai 🌿
+
 </p>
 
 <a
 class="maps-btn"
 href="https://www.google.com/maps/place/Danau+Toba"
+target="_blank">
+
+Lihat Maps
+
+</a>
+
+</div>
+
+</div>
+
+<!-- TUMPAK SEWU -->
+
+<div class="place-card airterjun">
+
+<img src="https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0?q=80&w=1200&auto=format&fit=crop">
+
+<div class="place-content">
+
+<h3>Tumpak Sewu</h3>
+
+<p>
+
+⭐ 4.9/5
+
+<br><br>
+
+Tumpak Sewu dijuluki Niagara Indonesia
+karena bentuk air terjunnya yang megah dan spektakuler.
+
+Suasana alam yang hijau dan udara segar
+menjadi daya tarik utama wisata ini 💦
+
+</p>
+
+<a
+class="maps-btn"
+href="https://www.google.com/maps/place/Tumpak+Sewu"
+target="_blank">
+
+Lihat Maps
+
+</a>
+
+</div>
+
+</div>
+
+<!-- PULAU KOMODO -->
+
+<div class="place-card pulau">
+
+<img src="https://images.unsplash.com/photo-1528127269322-539801943592?q=80&w=1200&auto=format&fit=crop">
+
+<div class="place-content">
+
+<h3>Pulau Komodo</h3>
+
+<p>
+
+⭐ 4.9/5
+
+<br><br>
+
+Pulau Komodo terkenal sebagai habitat asli komodo
+dan memiliki panorama laut yang sangat eksotis.
+
+Tempat ini menjadi favorit wisatawan
+karena pemandangannya yang unik dan menawan 🏝️
+
+</p>
+
+<a
+class="maps-btn"
+href="https://www.google.com/maps/place/Pulau+Komodo"
+target="_blank">
+
+Lihat Maps
+
+</a>
+
+</div>
+
+</div>
+
+<!-- HUTAN KALIMANTAN -->
+
+<div class="place-card hutan">
+
+<img src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?q=80&w=1200&auto=format&fit=crop">
+
+<div class="place-content">
+
+<h3>Hutan Kalimantan</h3>
+
+<p>
+
+⭐ 4.7/5
+
+<br><br>
+
+Hutan Kalimantan merupakan salah satu hutan tropis
+terbesar di Indonesia dengan flora dan fauna yang beragam.
+
+Suasana alami dan udara segar membuat tempat ini
+cocok untuk pecinta alam 🌳
+
+</p>
+
+<a
+class="maps-btn"
+href="https://www.google.com/maps/place/Hutan+Kalimantan"
 target="_blank">
 
 Lihat Maps
@@ -608,5 +837,38 @@ Lihat Maps
 
 </footer>
 
+<!-- FILTER JAVASCRIPT -->
+
+<script>
+
+filterSelection("all");
+
+function filterSelection(category){
+
+let cards =
+document.getElementsByClassName("place-card");
+
+for(let i = 0; i < cards.length; i++){
+
+cards[i].style.display = "none";
+
+if(category == "all"){
+
+cards[i].style.display = "block";
+
+}
+
+else if(cards[i].classList.contains(category)){
+
+cards[i].style.display = "block";
+
+}
+
+}
+
+}
+
+</script>
+
 </body>
-</html>
+  </html>
