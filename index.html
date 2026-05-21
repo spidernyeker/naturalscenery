@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Login - NatureID</title>
+<title>Natural Scenery Indonesia</title>
 
+<link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
@@ -16,15 +16,119 @@ margin:0;
 padding:0;
 box-sizing:border-box;
 font-family:'Poppins', sans-serif;
+scroll-behavior:smooth;
 }
 
 body{
+background:#f5f7f6;
+overflow-x:hidden;
+}
 
-height:100vh;
+/* NAVBAR */
 
+nav{
+width:100%;
+padding:20px 8%;
 display:flex;
-justify-content:center;
+justify-content:space-between;
 align-items:center;
+position:fixed;
+top:0;
+z-index:1000;
+background:rgba(0,0,0,0.4);
+backdrop-filter:blur(10px);
+}
+
+nav h2{
+color:white;
+font-size:28px;
+}
+
+nav ul{
+display:flex;
+list-style:none;
+gap:30px;
+}
+
+nav ul li a{
+text-decoration:none;
+color:white;
+transition:0.3s;
+font-weight:500;
+}
+
+nav ul li a:hover{
+color:#90ee90;
+}
+
+/* WELCOME BANNER */
+
+#welcomeBanner{
+
+display:none;
+
+position:fixed;
+
+top:90px;
+left:50%;
+
+transform:translateX(-50%);
+
+background:white;
+
+padding:20px 40px;
+
+border-radius:20px;
+
+box-shadow:0 5px 20px rgba(0,0,0,0.2);
+
+z-index:2500;
+
+text-align:center;
+
+animation:slideDown 0.5s ease;
+
+}
+
+#welcomeBanner h1{
+
+color:#2e8b57;
+
+font-size:30px;
+
+margin-bottom:10px;
+
+}
+
+#welcomeBanner p{
+
+color:#666;
+
+}
+
+@keyframes slideDown{
+
+from{
+
+opacity:0;
+transform:translateX(-50%) translateY(-30px);
+
+}
+
+to{
+
+opacity:1;
+transform:translateX(-50%) translateY(0);
+
+}
+
+}
+
+/* HERO */
+
+.hero{
+width:100%;
+height:100vh;
 
 background:
 linear-gradient(rgba(0,0,0,0.5),
@@ -34,33 +138,254 @@ url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?q=80&w=1400&au
 background-size:cover;
 background-position:center;
 
+display:flex;
+justify-content:center;
+align-items:center;
+text-align:center;
+padding:20px;
 }
 
-.login-box{
+.hero-content h1{
+font-size:60px;
+color:white;
+margin-bottom:20px;
+}
+
+.hero-content p{
+color:white;
+font-size:20px;
+max-width:700px;
+margin:auto;
+margin-bottom:30px;
+line-height:1.8;
+}
+
+.hero-content a{
+text-decoration:none;
+background:#2e8b57;
+color:white;
+padding:15px 35px;
+border-radius:50px;
+transition:0.3s;
+font-weight:bold;
+}
+
+.hero-content a:hover{
+background:#246b45;
+}
+
+/* SECTION */
+
+.categories,
+.wisata{
+padding:80px 8%;
+}
+
+.wisata{
+background:#edf4ef;
+}
+
+.section-title{
+text-align:center;
+margin-bottom:50px;
+}
+
+.section-title h2{
+font-size:40px;
+color:#2e8b57;
+}
+
+.section-title p{
+color:#666;
+margin-top:10px;
+}
+
+/* CATEGORY */
+
+.category-container{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:25px;
+}
+
+.category-card{
+background:white;
+border-radius:20px;
+overflow:hidden;
+box-shadow:0 5px 15px rgba(0,0,0,0.1);
+transition:0.3s;
+}
+
+.category-card:hover{
+transform:translateY(-10px);
+}
+
+.category-card img{
+width:100%;
+height:220px;
+object-fit:cover;
+}
+
+.category-content{
+padding:20px;
+}
+
+.category-content h3{
+color:#2e8b57;
+margin-bottom:10px;
+}
+
+.category-content p{
+color:#666;
+font-size:14px;
+line-height:1.7;
+}
+
+/* FILTER */
+
+.filter-buttons{
+display:flex;
+justify-content:center;
+gap:15px;
+flex-wrap:wrap;
+margin-bottom:40px;
+}
+
+.filter-buttons button{
+padding:12px 25px;
+border:none;
+border-radius:30px;
+background:#2e8b57;
+color:white;
+cursor:pointer;
+transition:0.3s;
+}
+
+.filter-buttons button:hover{
+background:#246b45;
+}
+
+/* PLACE */
+
+.place-container{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+gap:30px;
+}
+
+.place-card{
+background:white;
+border-radius:20px;
+overflow:hidden;
+box-shadow:0 5px 15px rgba(0,0,0,0.1);
+transition:0.3s;
+}
+
+.place-card:hover{
+transform:translateY(-10px);
+}
+
+.place-card img{
+width:100%;
+height:250px;
+object-fit:cover;
+}
+
+.place-content{
+padding:20px;
+}
+
+.place-content h3{
+color:#2e8b57;
+margin-bottom:15px;
+font-size:24px;
+}
+
+.place-content p{
+color:#666;
+font-size:14px;
+line-height:1.8;
+margin-bottom:20px;
+}
+
+.maps-btn{
+text-decoration:none;
+background:#2e8b57;
+color:white;
+padding:10px 20px;
+border-radius:30px;
+display:inline-block;
+transition:0.3s;
+margin-right:10px;
+margin-top:10px;
+}
+
+.maps-btn:hover{
+background:#246b45;
+}
+
+/* LOGIN MODAL */
+
+.modal{
+
+display:none;
+
+position:fixed;
+
+z-index:3000;
+
+left:0;
+top:0;
+
+width:100%;
+height:100%;
+
+background:rgba(0,0,0,0.6);
+
+justify-content:center;
+align-items:center;
+
+}
+
+.modal-content{
 
 background:white;
 
-padding:40px;
-
-width:350px;
+padding:35px;
 
 border-radius:20px;
 
-box-shadow:0 5px 20px rgba(0,0,0,0.3);
+width:320px;
+
+position:relative;
+
+animation:popup 0.3s ease;
+
+}
+
+@keyframes popup{
+
+from{
+transform:scale(0.8);
+opacity:0;
+}
+
+to{
+transform:scale(1);
+opacity:1;
+}
+
+}
+
+.modal-content h2{
 
 text-align:center;
-
-}
-
-.login-box h1{
-
+margin-bottom:20px;
 color:#2e8b57;
 
-margin-bottom:20px;
-
 }
 
-.login-box input{
+.modal-content input{
 
 width:100%;
 
@@ -76,7 +401,7 @@ outline:none;
 
 }
 
-.login-box button{
+.modal-content button{
 
 width:100%;
 
@@ -92,36 +417,463 @@ border-radius:10px;
 
 cursor:pointer;
 
-font-size:16px;
+transition:0.3s;
 
 }
 
-.login-box button:hover{
+.modal-content button:hover{
 
 background:#246b45;
 
 }
 
-#welcome{
+.close-btn{
 
-margin-top:20px;
+position:absolute;
 
-font-size:20px;
+top:10px;
+right:15px;
 
-font-weight:bold;
+font-size:28px;
 
-color:#2e8b57;
+cursor:pointer;
+
+}
+
+/* FOOTER */
+
+footer{
+background:#1d3c2f;
+color:white;
+text-align:center;
+padding:30px;
+}
+
+/* RESPONSIVE */
+
+@media(max-width:768px){
+
+nav{
+flex-direction:column;
+gap:15px;
+}
+
+.hero-content h1{
+font-size:40px;
+}
+
+.hero-content p{
+font-size:16px;
+}
+
+#welcomeBanner{
+width:90%;
+padding:20px;
+}
+
+#welcomeBanner h1{
+font-size:22px;
+}
 
 }
 
 </style>
-
 </head>
 <body>
 
-<div class="login-box">
+<!-- NAVBAR -->
 
-<h1>Login</h1>
+<nav>
+
+<h2>NatureID</h2>
+
+<ul>
+
+<li><a href="#home">Home</a></li>
+<li><a href="#kategori">Kategori</a></li>
+<li><a href="#wisata">Wisata</a></li>
+
+<li>
+
+<a
+href="#"
+id="navLogin"
+onclick="openLogin()">
+
+Login
+
+</a>
+
+</li>
+
+</ul>
+
+</nav>
+
+<!-- WELCOME -->
+
+<div id="welcomeBanner">
+
+<h1 id="welcomeText"></h1>
+
+<p>
+Nikmati eksplorasi wisata alam Indonesia 🌿
+</p>
+
+</div>
+
+<!-- HERO -->
+
+<section class="hero" id="home">
+
+<div class="hero-content">
+
+<h1>
+Eksplor Keindahan Alam Indonesia
+</h1>
+
+<p>
+Temukan berbagai destinasi wisata alam terbaik di Indonesia 🌿
+Mulai dari gunung, pantai, danau,
+air terjun, pulau hingga hutan tropis.
+</p>
+
+<a href="#kategori">
+Jelajahi Sekarang
+</a>
+
+</div>
+
+</section>
+
+<!-- KATEGORI -->
+
+<section class="categories" id="kategori">
+
+<div class="section-title">
+
+<h2>Kategori Wisata</h2>
+
+<p>
+Pilih kategori wisata favoritmu ✨
+</p>
+
+</div>
+
+<div class="category-container">
+
+<div class="category-card">
+
+<img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?q=80&w=1200&auto=format&fit=crop">
+
+<div class="category-content">
+
+<h3>Gunung</h3>
+
+<p>
+Destinasi pegunungan dengan panorama indah dan udara sejuk.
+</p>
+
+</div>
+
+</div>
+
+<div class="category-card">
+
+<img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=1200&auto=format&fit=crop">
+
+<div class="category-content">
+
+<h3>Pantai</h3>
+
+<p>
+Pantai eksotis Indonesia dengan pasir putih dan laut biru.
+</p>
+
+</div>
+
+</div>
+
+<div class="category-card">
+
+<img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=1200&auto=format&fit=crop">
+
+<div class="category-content">
+
+<h3>Danau</h3>
+
+<p>
+Danau alami dengan suasana tenang dan panorama indah.
+</p>
+
+</div>
+
+</div>
+
+<div class="category-card">
+
+<img src="https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0?q=80&w=1200&auto=format&fit=crop">
+
+<div class="category-content">
+
+<h3>Air Terjun</h3>
+
+<p>
+Air terjun alami dengan udara segar dan pemandangan hijau.
+</p>
+
+</div>
+
+</div>
+
+<div class="category-card">
+
+<img src="https://images.unsplash.com/photo-1528127269322-539801943592?q=80&w=1200&auto=format&fit=crop">
+
+<div class="category-content">
+
+<h3>Pulau</h3>
+
+<p>
+Pulau tropis Indonesia dengan panorama laut eksotis.
+</p>
+
+</div>
+
+</div>
+
+<div class="category-card">
+
+<img src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?q=80&w=1200&auto=format&fit=crop">
+
+<div class="category-content">
+
+<h3>Hutan</h3>
+
+<p>
+Hutan tropis Indonesia dengan udara yang menyegarkan.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- WISATA -->
+
+<section class="wisata" id="wisata">
+
+<div class="section-title">
+
+<h2>Rekomendasi Wisata</h2>
+
+<p>
+Review tempat wisata populer di Indonesia 🌏
+</p>
+
+</div>
+
+<!-- FILTER -->
+
+<div class="filter-buttons">
+
+<button onclick="filterSelection('all')">Semua</button>
+<button onclick="filterSelection('gunung')">Gunung</button>
+<button onclick="filterSelection('pantai')">Pantai</button>
+<button onclick="filterSelection('danau')">Danau</button>
+<button onclick="filterSelection('airterjun')">Air Terjun</button>
+<button onclick="filterSelection('pulau')">Pulau</button>
+<button onclick="filterSelection('hutan')">Hutan</button>
+
+</div>
+
+<div class="place-container">
+
+<!-- BROMO -->
+
+<div class="place-card gunung">
+
+<img src="https://images.unsplash.com/photo-1519046904884-53103b34b206?q=80&w=1200&auto=format&fit=crop">
+
+<div class="place-content">
+
+<h3>Gunung Bromo</h3>
+
+<p>
+
+📍 Jawa Timur
+
+<br><br>
+
+⭐ Google Maps Rating: 4.7/5
+
+<br><br>
+
+👥 58 ribu ulasan
+
+<br><br>
+
+Gunung Bromo terkenal dengan sunrise indah,
+lautan pasir luas, dan udara pegunungan yang sejuk 🌄
+
+</p>
+
+<a
+class="maps-btn"
+href="https://www.google.com/maps/place/Gunung+Bromo"
+target="_blank">
+
+Lihat Maps
+
+</a>
+
+<a
+class="maps-btn"
+href="https://www.google.com/maps/place/Gunung+Bromo/reviews"
+target="_blank">
+
+Lihat Ulasan
+
+</a>
+
+</div>
+
+</div>
+
+<!-- RAJA AMPAT -->
+
+<div class="place-card pantai pulau">
+
+<img src="https://images.unsplash.com/photo-1500375592092-40eb2168fd21?q=80&w=1200&auto=format&fit=crop">
+
+<div class="place-content">
+
+<h3>Raja Ampat</h3>
+
+<p>
+
+📍 Papua Barat
+
+<br><br>
+
+⭐ Google Maps Rating: 4.9/5
+
+<br><br>
+
+👥 12 ribu ulasan
+
+<br><br>
+
+Raja Ampat dikenal sebagai surga bawah laut Indonesia
+dengan panorama laut yang sangat memukau 🌊
+
+</p>
+
+<a
+class="maps-btn"
+href="https://www.google.com/maps/place/Raja+Ampat"
+target="_blank">
+
+Lihat Maps
+
+</a>
+
+<a
+class="maps-btn"
+href="https://www.google.com/maps/place/Raja+Ampat/reviews"
+target="_blank">
+
+Lihat Ulasan
+
+</a>
+
+</div>
+
+</div>
+
+<!-- DANAU TOBA -->
+
+<div class="place-card danau">
+
+<img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=1200&auto=format&fit=crop">
+
+<div class="place-content">
+
+<h3>Danau Toba</h3>
+
+<p>
+
+📍 Sumatera Utara
+
+<br><br>
+
+⭐ Google Maps Rating: 4.8/5
+
+<br><br>
+
+👥 27 ribu ulasan
+
+<br><br>
+
+Danau Toba merupakan danau vulkanik terbesar di Indonesia
+dengan panorama alam yang sangat indah 🌿
+
+</p>
+
+<a
+class="maps-btn"
+href="https://www.google.com/maps/place/Danau+Toba"
+target="_blank">
+
+Lihat Maps
+
+</a>
+
+<a
+class="maps-btn"
+href="https://www.google.com/maps/place/Danau+Toba/reviews"
+target="_blank">
+
+Lihat Ulasan
+
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- FOOTER -->
+
+<footer>
+
+<p>
+© 2026 Natural Scenery Indonesia 🌿
+</p>
+
+</footer>
+
+<!-- LOGIN MODAL -->
+
+<div class="modal" id="loginModal">
+
+<div class="modal-content">
+
+<span
+class="close-btn"
+onclick="closeLogin()">
+
+×
+
+</span>
+
+<h2>Login</h2>
 
 <input
 type="text"
@@ -133,17 +885,70 @@ type="password"
 id="password"
 placeholder="Masukkan Password">
 
-<button onclick="loginUser()">
+<button
+id="loginBtn"
+onclick="loginUser()">
 
 Login
 
 </button>
 
-<p id="welcome"></p>
+</div>
 
 </div>
 
+<!-- JAVASCRIPT -->
+
 <script>
+
+/* FILTER */
+
+filterSelection("all");
+
+function filterSelection(category){
+
+let cards =
+document.getElementsByClassName("place-card");
+
+for(let i = 0; i < cards.length; i++){
+
+cards[i].style.display = "none";
+
+if(category == "all"){
+
+cards[i].style.display = "block";
+
+}
+
+else if(cards[i].classList.contains(category)){
+
+cards[i].style.display = "block";
+
+}
+
+}
+
+}
+
+/* OPEN LOGIN */
+
+function openLogin(){
+
+document.getElementById("loginModal")
+.style.display = "flex";
+
+}
+
+/* CLOSE LOGIN */
+
+function closeLogin(){
+
+document.getElementById("loginModal")
+.style.display = "none";
+
+}
+
+/* LOGIN */
 
 function loginUser(){
 
@@ -163,6 +968,8 @@ return;
 let savedPassword =
 localStorage.getItem(username);
 
+/* akun baru */
+
 if(savedPassword === null){
 
 localStorage.setItem(username,password);
@@ -171,6 +978,8 @@ alert("Akun berhasil dibuat!");
 
 }
 
+/* password salah */
+
 else if(savedPassword !== password){
 
 alert("Password salah!");
@@ -178,19 +987,41 @@ return;
 
 }
 
-document.getElementById("welcome")
+/* login berhasil */
+
+document.getElementById("welcomeText")
 .innerHTML =
-"🌿 Selamat datang, " + username + " 👋";
+"🌿 Selamat Datang, " + username + " 👋";
 
-localStorage.setItem("isLogin","true");
+document.getElementById("welcomeBanner")
+.style.display = "block";
 
-localStorage.setItem("activeUser",username);
+document.getElementById("navLogin")
+.innerHTML = "Logout";
 
-setTimeout(() => {
+document.getElementById("navLogin")
+.onclick = logoutUser;
 
-window.location.href = "../index.html";
+closeLogin();
 
-},1500);
+}
+
+/* LOGOUT */
+
+function logoutUser(){
+
+document.getElementById("welcomeBanner")
+.style.display = "none";
+
+document.getElementById("navLogin")
+.innerHTML = "Login";
+
+document.getElementById("navLogin")
+.onclick = openLogin;
+
+document.getElementById("username").value = "";
+
+document.getElementById("password").value = "";
 
 }
 
