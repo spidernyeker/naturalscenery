@@ -26,54 +26,42 @@ background:#f5f7f6;
 /* NAVBAR */
 
 nav{
-
 width:100%;
-
 padding:20px 8%;
-
 display:flex;
 justify-content:space-between;
 align-items:center;
-
 position:fixed;
 top:0;
-
 z-index:1000;
-
 background:rgba(0,0,0,0.4);
-
 backdrop-filter:blur(10px);
 }
 
 nav h2{
-
 color:white;
 font-size:28px;
 }
 
 nav ul{
-
 display:flex;
 list-style:none;
 gap:30px;
 }
 
 nav ul li a{
-
 text-decoration:none;
 color:white;
 transition:0.3s;
 }
 
 nav ul li a:hover{
-
 color:#90ee90;
 }
 
 /* HERO */
 
 .hero{
-
 width:100%;
 height:100vh;
 
@@ -88,125 +76,100 @@ background-position:center;
 display:flex;
 justify-content:center;
 align-items:center;
-
 text-align:center;
-
 padding:20px;
 }
 
 .hero-content h1{
-
 font-size:60px;
 color:white;
 margin-bottom:20px;
 }
 
 .hero-content p{
-
 color:white;
 font-size:20px;
-
 max-width:700px;
-
 margin:auto;
 margin-bottom:30px;
-
 line-height:1.8;
 }
 
 .hero-content a{
-
 text-decoration:none;
-
 background:#2e8b57;
-
 color:white;
-
 padding:15px 35px;
-
 border-radius:50px;
-
 transition:0.3s;
 }
 
 .hero-content a:hover{
-
 background:#246b45;
 }
 
-/* KATEGORI */
+/* SECTION */
 
-.categories{
-
+.categories,
+.wisata{
 padding:80px 8%;
 }
 
-.section-title{
+.wisata{
+background:#edf4ef;
+}
 
+.section-title{
 text-align:center;
 margin-bottom:50px;
 }
 
 .section-title h2{
-
 font-size:40px;
 color:#2e8b57;
 }
 
 .section-title p{
-
 color:#666;
 margin-top:10px;
 }
 
+/* CATEGORY */
+
 .category-container{
-
 display:grid;
-
 grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-
 gap:25px;
 }
 
 .category-card{
-
 background:white;
-
 border-radius:20px;
-
 overflow:hidden;
-
 box-shadow:0 5px 15px rgba(0,0,0,0.1);
-
 transition:0.3s;
 }
 
 .category-card:hover{
-
 transform:translateY(-10px);
 }
 
 .category-card img{
-
 width:100%;
 height:220px;
-
 object-fit:cover;
 }
 
 .category-content{
-
 padding:20px;
 }
 
 .category-content h3{
-
 color:#2e8b57;
 margin-bottom:10px;
 }
 
 .category-content p{
-
 color:#666;
 font-size:14px;
 line-height:1.7;
@@ -215,136 +178,145 @@ line-height:1.7;
 /* FILTER */
 
 .filter-buttons{
-
 display:flex;
 justify-content:center;
 gap:15px;
 flex-wrap:wrap;
-
 margin-bottom:40px;
 }
 
 .filter-buttons button{
-
 padding:12px 25px;
-
 border:none;
-
 border-radius:30px;
-
 background:#2e8b57;
-
 color:white;
-
 cursor:pointer;
-
 transition:0.3s;
 }
 
 .filter-buttons button:hover{
-
 background:#246b45;
 }
 
-/* WISATA */
-
-.wisata{
-
-padding:80px 8%;
-
-background:#edf4ef;
-}
+/* PLACE */
 
 .place-container{
-
 display:grid;
-
 grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
-
 gap:30px;
 }
 
 .place-card{
-
 background:white;
-
 border-radius:20px;
-
 overflow:hidden;
-
 box-shadow:0 5px 15px rgba(0,0,0,0.1);
-
 transition:0.3s;
 }
 
 .place-card:hover{
-
 transform:translateY(-10px);
 }
 
 .place-card img{
-
 width:100%;
 height:250px;
-
 object-fit:cover;
 }
 
 .place-content{
-
 padding:20px;
 }
 
 .place-content h3{
-
 color:#2e8b57;
 margin-bottom:15px;
 font-size:24px;
 }
 
 .place-content p{
-
 color:#666;
-
 font-size:14px;
-
-margin-bottom:20px;
-
 line-height:1.8;
+margin-bottom:20px;
 }
 
 .maps-btn{
-
 text-decoration:none;
-
 background:#2e8b57;
-
 color:white;
-
 padding:10px 20px;
-
 border-radius:30px;
-
 display:inline-block;
-
 transition:0.3s;
+margin-right:10px;
+margin-top:10px;
 }
 
 .maps-btn:hover{
-
 background:#246b45;
+}
+
+/* LOGIN */
+
+.login-section{
+padding:100px 8%;
+display:flex;
+justify-content:center;
+align-items:center;
+}
+
+.login-box{
+background:white;
+padding:40px;
+border-radius:20px;
+width:350px;
+box-shadow:0 5px 15px rgba(0,0,0,0.1);
+text-align:center;
+}
+
+.login-box h2{
+margin-bottom:20px;
+color:#2e8b57;
+}
+
+.login-box input{
+width:100%;
+padding:12px;
+margin-bottom:15px;
+border:1px solid #ccc;
+border-radius:10px;
+outline:none;
+}
+
+.login-box button{
+width:100%;
+padding:12px;
+border:none;
+background:#2e8b57;
+color:white;
+border-radius:10px;
+cursor:pointer;
+transition:0.3s;
+}
+
+.login-box button:hover{
+background:#246b45;
+}
+
+#welcome{
+margin-top:20px;
+color:#2e8b57;
+font-weight:bold;
 }
 
 /* FOOTER */
 
 footer{
-
 background:#1d3c2f;
-
 color:white;
-
 text-align:center;
-
 padding:30px;
 }
 
@@ -353,18 +325,15 @@ padding:30px;
 @media(max-width:768px){
 
 nav{
-
 flex-direction:column;
 gap:15px;
 }
 
 .hero-content h1{
-
 font-size:40px;
 }
 
 .hero-content p{
-
 font-size:16px;
 }
 
@@ -382,21 +351,10 @@ font-size:16px;
 
 <ul>
 
-<li>
-<a href="#home">Home</a>
-</li>
-
-<li>
-<a href="#kategori">Kategori</a>
-</li>
-
-<li>
-<a href="#wisata">Wisata</a>
-</li>
-
-<li>
-<a href="login.html">Login</a>
-</li>
+<li><a href="#home">Home</a></li>
+<li><a href="#kategori">Kategori</a></li>
+<li><a href="#wisata">Wisata</a></li>
+<li><a href="#login">Login</a></li>
 
 </ul>
 
@@ -413,9 +371,9 @@ Eksplor Keindahan Alam Indonesia
 </h1>
 
 <p>
-Temukan berbagai destinasi wisata alam terbaik di Indonesia,
-mulai dari gunung, pantai, danau, air terjun, pulau,
-hingga hutan tropis yang memukau 🌿
+Temukan berbagai destinasi wisata alam terbaik di Indonesia 🌿
+Mulai dari gunung, pantai, danau,
+air terjun, pulau hingga hutan tropis.
 </p>
 
 <a href="#kategori">
@@ -435,7 +393,7 @@ Jelajahi Sekarang
 <h2>Kategori Wisata</h2>
 
 <p>
-Pilih kategori destinasi favoritmu ✨
+Pilih kategori wisata favoritmu ✨
 </p>
 
 </div>
@@ -443,105 +401,51 @@ Pilih kategori destinasi favoritmu ✨
 <div class="category-container">
 
 <div class="category-card">
-
 <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?q=80&w=1200&auto=format&fit=crop">
-
 <div class="category-content">
-
 <h3>Gunung</h3>
-
-<p>
-Destinasi pegunungan dengan udara sejuk,
-sunrise indah, dan pemandangan alam memukau.
-</p>
-
+<p>Destinasi pegunungan dengan panorama indah dan udara sejuk.</p>
 </div>
-
 </div>
 
 <div class="category-card">
-
 <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=1200&auto=format&fit=crop">
-
 <div class="category-content">
-
 <h3>Pantai</h3>
-
-<p>
-Pantai eksotis dengan pasir putih,
-ombak indah, dan panorama laut tropis.
-</p>
-
+<p>Pantai eksotis Indonesia dengan pasir putih dan laut biru.</p>
 </div>
-
 </div>
 
 <div class="category-card">
-
 <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=1200&auto=format&fit=crop">
-
 <div class="category-content">
-
 <h3>Danau</h3>
-
-<p>
-Danau alami Indonesia dengan suasana tenang
-dan panorama yang menenangkan.
-</p>
-
+<p>Danau alami dengan suasana tenang dan panorama indah.</p>
 </div>
-
 </div>
 
 <div class="category-card">
-
 <img src="https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0?q=80&w=1200&auto=format&fit=crop">
-
 <div class="category-content">
-
 <h3>Air Terjun</h3>
-
-<p>
-Air terjun alami dengan suasana segar
-dan pemandangan hijau yang indah.
-</p>
-
+<p>Air terjun alami dengan udara segar dan pemandangan hijau.</p>
 </div>
-
 </div>
 
 <div class="category-card">
-
 <img src="https://images.unsplash.com/photo-1528127269322-539801943592?q=80&w=1200&auto=format&fit=crop">
-
 <div class="category-content">
-
 <h3>Pulau</h3>
-
-<p>
-Pulau tropis Indonesia dengan laut jernih
-dan panorama eksotis yang memanjakan mata.
-</p>
-
+<p>Pulau tropis Indonesia dengan panorama laut eksotis.</p>
 </div>
-
 </div>
 
 <div class="category-card">
-
 <img src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?q=80&w=1200&auto=format&fit=crop">
-
 <div class="category-content">
-
 <h3>Hutan</h3>
-
-<p>
-Hutan tropis alami dengan udara segar
-dan keanekaragaman hayati Indonesia.
-</p>
-
+<p>Hutan tropis Indonesia dengan udara yang menyegarkan.</p>
 </div>
-
 </div>
 
 </div>
@@ -566,33 +470,13 @@ Review tempat wisata populer di Indonesia 🌏
 
 <div class="filter-buttons">
 
-<button onclick="filterSelection('all')">
-Semua
-</button>
-
-<button onclick="filterSelection('gunung')">
-Gunung
-</button>
-
-<button onclick="filterSelection('pantai')">
-Pantai
-</button>
-
-<button onclick="filterSelection('danau')">
-Danau
-</button>
-
-<button onclick="filterSelection('airterjun')">
-Air Terjun
-</button>
-
-<button onclick="filterSelection('pulau')">
-Pulau
-</button>
-
-<button onclick="filterSelection('hutan')">
-Hutan
-</button>
+<button onclick="filterSelection('all')">Semua</button>
+<button onclick="filterSelection('gunung')">Gunung</button>
+<button onclick="filterSelection('pantai')">Pantai</button>
+<button onclick="filterSelection('danau')">Danau</button>
+<button onclick="filterSelection('airterjun')">Air Terjun</button>
+<button onclick="filterSelection('pulau')">Pulau</button>
+<button onclick="filterSelection('hutan')">Hutan</button>
 
 </div>
 
@@ -610,17 +494,23 @@ Hutan
 
 <p>
 
-⭐ 4.9/5
+📍 Jawa Timur
 
 <br><br>
 
-Gunung Bromo merupakan salah satu destinasi wisata
-paling terkenal di Indonesia. Tempat ini menawarkan
-pemandangan sunrise yang sangat indah dengan lautan
-pasir luas dan udara pegunungan yang sejuk.
+⭐ Google Maps Rating: 4.7/5
 
-Cocok untuk camping, jeep tour,
-dan berburu foto aesthetic 🌄
+<br><br>
+
+👥 58 ribu ulasan
+
+<br><br>
+
+Gunung Bromo terkenal dengan sunrise indah,
+lautan pasir luas, dan udara pegunungan yang sejuk.
+
+Tempat ini cocok untuk camping,
+jeep tour, dan berburu foto aesthetic 🌄
 
 </p>
 
@@ -633,13 +523,22 @@ Lihat Maps
 
 </a>
 
+<a
+class="maps-btn"
+href="https://www.google.com/maps/place/Gunung+Bromo/reviews"
+target="_blank">
+
+Lihat Ulasan
+
+</a>
+
 </div>
 
 </div>
 
 <!-- RAJA AMPAT -->
 
-<div class="place-card pantai">
+<div class="place-card pantai pulau">
 
 <img src="https://images.unsplash.com/photo-1500375592092-40eb2168fd21?q=80&w=1200&auto=format&fit=crop">
 
@@ -649,15 +548,20 @@ Lihat Maps
 
 <p>
 
-⭐ 5.0/5
+📍 Papua Barat
+
+<br><br>
+
+⭐ Google Maps Rating: 4.9/5
+
+<br><br>
+
+👥 12 ribu ulasan
 
 <br><br>
 
 Raja Ampat dikenal sebagai surga bawah laut Indonesia
-dengan air laut jernih dan gugusan pulau yang sangat indah.
-
-Tempat ini cocok untuk snorkeling,
-diving, dan healing menikmati alam 🌊
+dengan panorama laut yang sangat memukau 🌊
 
 </p>
 
@@ -667,6 +571,15 @@ href="https://www.google.com/maps/place/Raja+Ampat"
 target="_blank">
 
 Lihat Maps
+
+</a>
+
+<a
+class="maps-btn"
+href="https://www.google.com/maps/place/Raja+Ampat/reviews"
+target="_blank">
+
+Lihat Ulasan
 
 </a>
 
@@ -686,16 +599,20 @@ Lihat Maps
 
 <p>
 
-⭐ 4.8/5
+📍 Sumatera Utara
 
 <br><br>
 
-Danau Toba merupakan danau vulkanik terbesar
-di Indonesia yang memiliki panorama sangat indah
-dan udara yang menenangkan.
+⭐ Google Maps Rating: 4.8/5
 
-Tempat ini cocok untuk liburan keluarga
-dan menikmati suasana alam yang damai 🌿
+<br><br>
+
+👥 27 ribu ulasan
+
+<br><br>
+
+Danau Toba merupakan danau vulkanik terbesar di Indonesia
+dengan panorama alam yang sangat indah 🌿
 
 </p>
 
@@ -708,40 +625,12 @@ Lihat Maps
 
 </a>
 
-</div>
-
-</div>
-
-<!-- TUMPAK SEWU -->
-
-<div class="place-card airterjun">
-
-<img src="https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0?q=80&w=1200&auto=format&fit=crop">
-
-<div class="place-content">
-
-<h3>Tumpak Sewu</h3>
-
-<p>
-
-⭐ 4.9/5
-
-<br><br>
-
-Tumpak Sewu dijuluki Niagara Indonesia
-karena bentuk air terjunnya yang megah dan spektakuler.
-
-Suasana alam yang hijau dan udara segar
-menjadi daya tarik utama wisata ini 💦
-
-</p>
-
 <a
 class="maps-btn"
-href="https://www.google.com/maps/place/Tumpak+Sewu"
+href="https://www.google.com/maps/place/Danau+Toba/reviews"
 target="_blank">
 
-Lihat Maps
+Lihat Ulasan
 
 </a>
 
@@ -749,79 +638,37 @@ Lihat Maps
 
 </div>
 
-<!-- PULAU KOMODO -->
-
-<div class="place-card pulau">
-
-<img src="https://images.unsplash.com/photo-1528127269322-539801943592?q=80&w=1200&auto=format&fit=crop">
-
-<div class="place-content">
-
-<h3>Pulau Komodo</h3>
-
-<p>
-
-⭐ 4.9/5
-
-<br><br>
-
-Pulau Komodo terkenal sebagai habitat asli komodo
-dan memiliki panorama laut yang sangat eksotis.
-
-Tempat ini menjadi favorit wisatawan
-karena pemandangannya yang unik dan menawan 🏝️
-
-</p>
-
-<a
-class="maps-btn"
-href="https://www.google.com/maps/place/Pulau+Komodo"
-target="_blank">
-
-Lihat Maps
-
-</a>
-
 </div>
 
-</div>
+</section>
 
-<!-- HUTAN KALIMANTAN -->
+<!-- LOGIN -->
 
-<div class="place-card hutan">
+<section class="login-section" id="login">
 
-<img src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?q=80&w=1200&auto=format&fit=crop">
+<div class="login-box">
 
-<div class="place-content">
+<h2>Login</h2>
 
-<h3>Hutan Kalimantan</h3>
+<input
+type="text"
+id="username"
+placeholder="Masukkan Username">
 
-<p>
+<input
+type="password"
+id="password"
+placeholder="Masukkan Password">
 
-⭐ 4.7/5
+<button
+id="loginBtn"
+onclick="loginUser()">
 
-<br><br>
+Login
 
-Hutan Kalimantan merupakan salah satu hutan tropis
-terbesar di Indonesia dengan flora dan fauna yang beragam.
+</button>
 
-Suasana alami dan udara segar membuat tempat ini
-cocok untuk pecinta alam 🌳
-
-</p>
-
-<a
-class="maps-btn"
-href="https://www.google.com/maps/place/Hutan+Kalimantan"
-target="_blank">
-
-Lihat Maps
-
-</a>
-
-</div>
-
-</div>
+<p id="welcome"></p>
 
 </div>
 
@@ -837,9 +684,11 @@ Lihat Maps
 
 </footer>
 
-<!-- FILTER JAVASCRIPT -->
+<!-- JAVASCRIPT -->
 
 <script>
+
+/* FILTER */
 
 filterSelection("all");
 
@@ -868,7 +717,85 @@ cards[i].style.display = "block";
 
 }
 
+/* LOGIN SYSTEM */
+
+let isLogin = false;
+
+function loginUser(){
+
+let username =
+document.getElementById("username").value;
+
+let password =
+document.getElementById("password").value;
+
+if(username === "" || password === ""){
+
+alert("Username dan password harus diisi!");
+return;
+
+}
+
+let savedPassword =
+localStorage.getItem(username);
+
+/* akun baru */
+
+if(savedPassword === null){
+
+localStorage.setItem(username,password);
+
+alert("Akun berhasil dibuat!");
+
+}
+
+/* password salah */
+
+else if(savedPassword !== password){
+
+alert("Password salah!");
+return;
+
+}
+
+/* login berhasil */
+
+isLogin = true;
+
+document.getElementById("welcome")
+.innerHTML =
+"Selamat datang, " + username + " 👋";
+
+document.getElementById("loginBtn")
+.innerHTML = "Logout";
+
+document.getElementById("loginBtn")
+.setAttribute("onclick","logoutUser()");
+
+}
+
+/* logout */
+
+function logoutUser(){
+
+isLogin = false;
+
+document.getElementById("welcome")
+.innerHTML = "";
+
+document.getElementById("loginBtn")
+.innerHTML = "Login";
+
+document.getElementById("loginBtn")
+.setAttribute("onclick","loginUser()");
+
+document.getElementById("username").value = "";
+
+document.getElementById("password").value = "";
+
+}
+
 </script>
 
 </body>
-  </html>
+</html>
