@@ -21,6 +21,7 @@ scroll-behavior:smooth;
 
 body{
 background:#f5f7f6;
+overflow-x:hidden;
 }
 
 /* NAVBAR */
@@ -53,10 +54,74 @@ nav ul li a{
 text-decoration:none;
 color:white;
 transition:0.3s;
+font-weight:500;
 }
 
 nav ul li a:hover{
 color:#90ee90;
+}
+
+/* WELCOME BANNER */
+
+#welcomeBanner{
+
+display:none;
+
+position:fixed;
+
+top:90px;
+left:50%;
+
+transform:translateX(-50%);
+
+background:white;
+
+padding:20px 40px;
+
+border-radius:20px;
+
+box-shadow:0 5px 20px rgba(0,0,0,0.2);
+
+z-index:2500;
+
+text-align:center;
+
+animation:slideDown 0.5s ease;
+
+}
+
+#welcomeBanner h1{
+
+color:#2e8b57;
+
+font-size:30px;
+
+margin-bottom:10px;
+
+}
+
+#welcomeBanner p{
+
+color:#666;
+
+}
+
+@keyframes slideDown{
+
+from{
+
+opacity:0;
+transform:translateX(-50%) translateY(-30px);
+
+}
+
+to{
+
+opacity:1;
+transform:translateX(-50%) translateY(0);
+
+}
+
 }
 
 /* HERO */
@@ -102,6 +167,7 @@ color:white;
 padding:15px 35px;
 border-radius:50px;
 transition:0.3s;
+font-weight:bold;
 }
 
 .hero-content a:hover{
@@ -258,58 +324,120 @@ margin-top:10px;
 background:#246b45;
 }
 
-/* LOGIN POPUP */
+/* LOGIN MODAL */
 
-.login-popup{
+.modal{
+
+display:none;
+
 position:fixed;
-top:100px;
-right:30px;
-z-index:2000;
+
+z-index:3000;
+
+left:0;
+top:0;
+
+width:100%;
+height:100%;
+
+background:rgba(0,0,0,0.6);
+
+justify-content:center;
+align-items:center;
+
 }
 
-.login-box{
+.modal-content{
+
 background:white;
-padding:30px;
+
+padding:35px;
+
 border-radius:20px;
+
 width:320px;
-box-shadow:0 5px 15px rgba(0,0,0,0.2);
+
+position:relative;
+
+animation:popup 0.3s ease;
+
 }
 
-.login-box h2{
+@keyframes popup{
+
+from{
+transform:scale(0.8);
+opacity:0;
+}
+
+to{
+transform:scale(1);
+opacity:1;
+}
+
+}
+
+.modal-content h2{
+
+text-align:center;
 margin-bottom:20px;
 color:#2e8b57;
-text-align:center;
+
 }
 
-.login-box input{
+.modal-content input{
+
 width:100%;
+
 padding:12px;
+
 margin-bottom:15px;
+
 border:1px solid #ccc;
+
 border-radius:10px;
+
 outline:none;
+
 }
 
-.login-box button{
+.modal-content button{
+
 width:100%;
+
 padding:12px;
+
 border:none;
+
 background:#2e8b57;
+
 color:white;
+
 border-radius:10px;
+
 cursor:pointer;
+
 transition:0.3s;
+
 }
 
-.login-box button:hover{
+.modal-content button:hover{
+
 background:#246b45;
+
 }
 
-#welcome{
-margin-top:15px;
-color:#2e8b57;
-font-weight:bold;
-text-align:center;
+.close-btn{
+
+position:absolute;
+
+top:10px;
+right:15px;
+
+font-size:28px;
+
+cursor:pointer;
+
 }
 
 /* FOOTER */
@@ -338,14 +466,13 @@ font-size:40px;
 font-size:16px;
 }
 
-.login-popup{
-right:10px;
-left:10px;
-top:120px;
+#welcomeBanner{
+width:90%;
+padding:20px;
 }
 
-.login-box{
-width:100%;
+#welcomeBanner h1{
+font-size:22px;
 }
 
 }
@@ -366,39 +493,32 @@ width:100%;
 <li><a href="#kategori">Kategori</a></li>
 <li><a href="#wisata">Wisata</a></li>
 
+<li>
+
+<a
+href="#"
+id="navLogin"
+onclick="openLogin()">
+
+Login
+
+</a>
+
+</li>
+
 </ul>
 
 </nav>
 
-<!-- LOGIN POPUP -->
+<!-- WELCOME -->
 
-<div class="login-popup">
+<div id="welcomeBanner">
 
-<div class="login-box">
+<h1 id="welcomeText"></h1>
 
-<h2>Login</h2>
-
-<input
-type="text"
-id="username"
-placeholder="Masukkan Username">
-
-<input
-type="password"
-id="password"
-placeholder="Masukkan Password">
-
-<button
-id="loginBtn"
-onclick="loginUser()">
-
-Login
-
-</button>
-
-<p id="welcome"></p>
-
-</div>
+<p>
+Nikmati eksplorasi wisata alam Indonesia 🌿
+</p>
 
 </div>
 
@@ -443,57 +563,99 @@ Pilih kategori wisata favoritmu ✨
 <div class="category-container">
 
 <div class="category-card">
+
 <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?q=80&w=1200&auto=format&fit=crop">
 
 <div class="category-content">
+
 <h3>Gunung</h3>
-<p>Destinasi pegunungan dengan panorama indah dan udara sejuk.</p>
+
+<p>
+Destinasi pegunungan dengan panorama indah dan udara sejuk.
+</p>
+
 </div>
+
 </div>
 
 <div class="category-card">
+
 <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=1200&auto=format&fit=crop">
 
 <div class="category-content">
+
 <h3>Pantai</h3>
-<p>Pantai eksotis Indonesia dengan pasir putih dan laut biru.</p>
+
+<p>
+Pantai eksotis Indonesia dengan pasir putih dan laut biru.
+</p>
+
 </div>
+
 </div>
 
 <div class="category-card">
+
 <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=1200&auto=format&fit=crop">
 
 <div class="category-content">
+
 <h3>Danau</h3>
-<p>Danau alami dengan suasana tenang dan panorama indah.</p>
+
+<p>
+Danau alami dengan suasana tenang dan panorama indah.
+</p>
+
 </div>
+
 </div>
 
 <div class="category-card">
+
 <img src="https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0?q=80&w=1200&auto=format&fit=crop">
 
 <div class="category-content">
+
 <h3>Air Terjun</h3>
-<p>Air terjun alami dengan udara segar dan pemandangan hijau.</p>
+
+<p>
+Air terjun alami dengan udara segar dan pemandangan hijau.
+</p>
+
 </div>
+
 </div>
 
 <div class="category-card">
+
 <img src="https://images.unsplash.com/photo-1528127269322-539801943592?q=80&w=1200&auto=format&fit=crop">
 
 <div class="category-content">
+
 <h3>Pulau</h3>
-<p>Pulau tropis Indonesia dengan panorama laut eksotis.</p>
+
+<p>
+Pulau tropis Indonesia dengan panorama laut eksotis.
+</p>
+
 </div>
+
 </div>
 
 <div class="category-card">
+
 <img src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?q=80&w=1200&auto=format&fit=crop">
 
 <div class="category-content">
+
 <h3>Hutan</h3>
-<p>Hutan tropis Indonesia dengan udara yang menyegarkan.</p>
+
+<p>
+Hutan tropis Indonesia dengan udara yang menyegarkan.
+</p>
+
 </div>
+
 </div>
 
 </div>
@@ -697,6 +859,44 @@ Lihat Ulasan
 
 </footer>
 
+<!-- LOGIN MODAL -->
+
+<div class="modal" id="loginModal">
+
+<div class="modal-content">
+
+<span
+class="close-btn"
+onclick="closeLogin()">
+
+×
+
+</span>
+
+<h2>Login</h2>
+
+<input
+type="text"
+id="username"
+placeholder="Masukkan Username">
+
+<input
+type="password"
+id="password"
+placeholder="Masukkan Password">
+
+<button
+id="loginBtn"
+onclick="loginUser()">
+
+Login
+
+</button>
+
+</div>
+
+</div>
+
 <!-- JAVASCRIPT -->
 
 <script>
@@ -730,9 +930,25 @@ cards[i].style.display = "block";
 
 }
 
-/* LOGIN SYSTEM */
+/* OPEN LOGIN */
 
-let isLogin = false;
+function openLogin(){
+
+document.getElementById("loginModal")
+.style.display = "flex";
+
+}
+
+/* CLOSE LOGIN */
+
+function closeLogin(){
+
+document.getElementById("loginModal")
+.style.display = "none";
+
+}
+
+/* LOGIN */
 
 function loginUser(){
 
@@ -773,34 +989,35 @@ return;
 
 /* login berhasil */
 
-isLogin = true;
-
-document.getElementById("welcome")
+document.getElementById("welcomeText")
 .innerHTML =
-"Selamat datang, " + username + " 👋";
+"🌿 Selamat Datang, " + username + " 👋";
 
-document.getElementById("loginBtn")
+document.getElementById("welcomeBanner")
+.style.display = "block";
+
+document.getElementById("navLogin")
 .innerHTML = "Logout";
 
-document.getElementById("loginBtn")
+document.getElementById("navLogin")
 .onclick = logoutUser;
+
+closeLogin();
 
 }
 
-/* logout */
+/* LOGOUT */
 
 function logoutUser(){
 
-isLogin = false;
+document.getElementById("welcomeBanner")
+.style.display = "none";
 
-document.getElementById("welcome")
-.innerHTML = "";
-
-document.getElementById("loginBtn")
+document.getElementById("navLogin")
 .innerHTML = "Login";
 
-document.getElementById("loginBtn")
-.onclick = loginUser;
+document.getElementById("navLogin")
+.onclick = openLogin;
 
 document.getElementById("username").value = "";
 
