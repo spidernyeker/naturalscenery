@@ -53,8 +53,8 @@ gap:30px;
 nav ul li a{
 text-decoration:none;
 color:white;
-transition:0.3s;
 font-weight:500;
+transition:0.3s;
 }
 
 nav ul li a:hover{
@@ -261,6 +261,145 @@ margin-top:10px;
 background:#246b45;
 }
 
+/* LOGIN MODAL */
+
+.modal{
+
+display:none;
+
+position:fixed;
+
+z-index:3000;
+
+left:0;
+top:0;
+
+width:100%;
+height:100%;
+
+background:rgba(0,0,0,0.6);
+
+justify-content:center;
+align-items:center;
+
+}
+
+.modal-content{
+
+background:white;
+
+padding:35px;
+
+border-radius:20px;
+
+width:320px;
+
+position:relative;
+
+animation:popup 0.3s ease;
+
+}
+
+@keyframes popup{
+
+from{
+transform:scale(0.8);
+opacity:0;
+}
+
+to{
+transform:scale(1);
+opacity:1;
+}
+
+}
+
+.modal-content h2{
+text-align:center;
+margin-bottom:20px;
+color:#2e8b57;
+}
+
+.modal-content input{
+
+width:100%;
+
+padding:12px;
+
+margin-bottom:15px;
+
+border:1px solid #ccc;
+
+border-radius:10px;
+
+outline:none;
+
+}
+
+.modal-content button{
+
+width:100%;
+
+padding:12px;
+
+border:none;
+
+background:#2e8b57;
+
+color:white;
+
+border-radius:10px;
+
+cursor:pointer;
+
+}
+
+.close-btn{
+
+position:absolute;
+
+top:10px;
+right:15px;
+
+font-size:28px;
+
+cursor:pointer;
+
+}
+
+/* WELCOME */
+
+#welcomeBanner{
+
+display:none;
+
+position:fixed;
+
+top:90px;
+left:50%;
+
+transform:translateX(-50%);
+
+background:white;
+
+padding:20px 40px;
+
+border-radius:20px;
+
+box-shadow:0 5px 20px rgba(0,0,0,0.2);
+
+z-index:2500;
+
+text-align:center;
+
+}
+
+#welcomeBanner h1{
+color:#2e8b57;
+font-size:30px;
+margin-bottom:10px;
+}
+
 /* FOOTER */
 
 footer{
@@ -268,25 +407,6 @@ background:#1d3c2f;
 color:white;
 text-align:center;
 padding:30px;
-}
-
-/* RESPONSIVE */
-
-@media(max-width:768px){
-
-nav{
-flex-direction:column;
-gap:15px;
-}
-
-.hero-content h1{
-font-size:40px;
-}
-
-.hero-content p{
-font-size:16px;
-}
-
 }
 
 </style>
@@ -306,7 +426,7 @@ font-size:16px;
 <li><a href="#wisata">Wisata</a></li>
 
 <li>
-<a href="login/">
+<a href="#" onclick="openLogin()">
 Login
 </a>
 </li>
@@ -314,6 +434,18 @@ Login
 </ul>
 
 </nav>
+
+<!-- WELCOME -->
+
+<div id="welcomeBanner">
+
+<h1 id="welcomeText"></h1>
+
+<p>
+Nikmati eksplorasi wisata alam Indonesia 🌿
+</p>
+
+</div>
 
 <!-- HERO -->
 
@@ -382,33 +514,6 @@ Pilih kategori wisata favoritmu ✨
 </div>
 </div>
 
-<div class="category-card">
-<img src="https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0?q=80&w=1200&auto=format&fit=crop">
-
-<div class="category-content">
-<h3>Air Terjun</h3>
-<p>Air terjun alami dengan udara segar dan pemandangan hijau.</p>
-</div>
-</div>
-
-<div class="category-card">
-<img src="https://images.unsplash.com/photo-1528127269322-539801943592?q=80&w=1200&auto=format&fit=crop">
-
-<div class="category-content">
-<h3>Pulau</h3>
-<p>Pulau tropis Indonesia dengan panorama laut eksotis.</p>
-</div>
-</div>
-
-<div class="category-card">
-<img src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?q=80&w=1200&auto=format&fit=crop">
-
-<div class="category-content">
-<h3>Hutan</h3>
-<p>Hutan tropis Indonesia dengan udara yang menyegarkan.</p>
-</div>
-</div>
-
 </div>
 
 </section>
@@ -433,9 +538,6 @@ Review tempat wisata populer di Indonesia 🌏
 <button onclick="filterSelection('gunung')">Gunung</button>
 <button onclick="filterSelection('pantai')">Pantai</button>
 <button onclick="filterSelection('danau')">Danau</button>
-<button onclick="filterSelection('airterjun')">Air Terjun</button>
-<button onclick="filterSelection('pulau')">Pulau</button>
-<button onclick="filterSelection('hutan')">Hutan</button>
 
 </div>
 
@@ -477,15 +579,6 @@ Lihat Maps
 
 </a>
 
-<a
-class="maps-btn"
-href="https://www.google.com/maps/place/Gunung+Bromo/reviews"
-target="_blank">
-
-Lihat Ulasan
-
-</a>
-
 </div>
 
 </div>
@@ -504,7 +597,45 @@ Lihat Ulasan
 
 </footer>
 
+<!-- LOGIN MODAL -->
+
+<div class="modal" id="loginModal">
+
+<div class="modal-content">
+
+<span
+class="close-btn"
+onclick="closeLogin()">
+
+×
+
+</span>
+
+<h2>Login</h2>
+
+<input
+type="text"
+id="username"
+placeholder="Masukkan Username">
+
+<input
+type="password"
+id="password"
+placeholder="Masukkan Password">
+
+<button onclick="loginUser()">
+
+Login
+
+</button>
+
+</div>
+
+</div>
+
 <script>
+
+/* FILTER */
 
 filterSelection("all");
 
@@ -530,6 +661,70 @@ cards[i].style.display = "block";
 }
 
 }
+
+}
+
+/* OPEN LOGIN */
+
+function openLogin(){
+
+document.getElementById("loginModal")
+.style.display = "flex";
+
+}
+
+/* CLOSE LOGIN */
+
+function closeLogin(){
+
+document.getElementById("loginModal")
+.style.display = "none";
+
+}
+
+/* LOGIN */
+
+function loginUser(){
+
+let username =
+document.getElementById("username").value;
+
+let password =
+document.getElementById("password").value;
+
+if(username === "" || password === ""){
+
+alert("Username dan password harus diisi!");
+return;
+
+}
+
+let savedPassword =
+localStorage.getItem(username);
+
+if(savedPassword === null){
+
+localStorage.setItem(username,password);
+
+alert("Akun berhasil dibuat!");
+
+}
+
+else if(savedPassword !== password){
+
+alert("Password salah!");
+return;
+
+}
+
+document.getElementById("welcomeText")
+.innerHTML =
+"🌿 Selamat Datang, " + username + " 👋";
+
+document.getElementById("welcomeBanner")
+.style.display = "block";
+
+closeLogin();
 
 }
 
