@@ -61,69 +61,6 @@ nav ul li a:hover{
 color:#90ee90;
 }
 
-/* WELCOME BANNER */
-
-#welcomeBanner{
-
-display:none;
-
-position:fixed;
-
-top:90px;
-left:50%;
-
-transform:translateX(-50%);
-
-background:white;
-
-padding:20px 40px;
-
-border-radius:20px;
-
-box-shadow:0 5px 20px rgba(0,0,0,0.2);
-
-z-index:2500;
-
-text-align:center;
-
-animation:slideDown 0.5s ease;
-
-}
-
-#welcomeBanner h1{
-
-color:#2e8b57;
-
-font-size:30px;
-
-margin-bottom:10px;
-
-}
-
-#welcomeBanner p{
-
-color:#666;
-
-}
-
-@keyframes slideDown{
-
-from{
-
-opacity:0;
-transform:translateX(-50%) translateY(-30px);
-
-}
-
-to{
-
-opacity:1;
-transform:translateX(-50%) translateY(0);
-
-}
-
-}
-
 /* HERO */
 
 .hero{
@@ -324,122 +261,6 @@ margin-top:10px;
 background:#246b45;
 }
 
-/* LOGIN MODAL */
-
-.modal{
-
-display:none;
-
-position:fixed;
-
-z-index:3000;
-
-left:0;
-top:0;
-
-width:100%;
-height:100%;
-
-background:rgba(0,0,0,0.6);
-
-justify-content:center;
-align-items:center;
-
-}
-
-.modal-content{
-
-background:white;
-
-padding:35px;
-
-border-radius:20px;
-
-width:320px;
-
-position:relative;
-
-animation:popup 0.3s ease;
-
-}
-
-@keyframes popup{
-
-from{
-transform:scale(0.8);
-opacity:0;
-}
-
-to{
-transform:scale(1);
-opacity:1;
-}
-
-}
-
-.modal-content h2{
-
-text-align:center;
-margin-bottom:20px;
-color:#2e8b57;
-
-}
-
-.modal-content input{
-
-width:100%;
-
-padding:12px;
-
-margin-bottom:15px;
-
-border:1px solid #ccc;
-
-border-radius:10px;
-
-outline:none;
-
-}
-
-.modal-content button{
-
-width:100%;
-
-padding:12px;
-
-border:none;
-
-background:#2e8b57;
-
-color:white;
-
-border-radius:10px;
-
-cursor:pointer;
-
-transition:0.3s;
-
-}
-
-.modal-content button:hover{
-
-background:#246b45;
-
-}
-
-.close-btn{
-
-position:absolute;
-
-top:10px;
-right:15px;
-
-font-size:28px;
-
-cursor:pointer;
-
-}
-
 /* FOOTER */
 
 footer{
@@ -466,15 +287,6 @@ font-size:40px;
 font-size:16px;
 }
 
-#welcomeBanner{
-width:90%;
-padding:20px;
-}
-
-#welcomeBanner h1{
-font-size:22px;
-}
-
 }
 
 </style>
@@ -494,33 +306,14 @@ font-size:22px;
 <li><a href="#wisata">Wisata</a></li>
 
 <li>
-
-<a
-href="login"
-id="navLogin"
-onclick="openLogin()">
-
+<a href="login/">
 Login
-
 </a>
-
 </li>
 
 </ul>
 
 </nav>
-
-<!-- WELCOME -->
-
-<div id="welcomeBanner">
-
-<h1 id="welcomeText"></h1>
-
-<p>
-Nikmati eksplorasi wisata alam Indonesia 🌿
-</p>
-
-</div>
 
 <!-- HERO -->
 
@@ -563,99 +356,57 @@ Pilih kategori wisata favoritmu ✨
 <div class="category-container">
 
 <div class="category-card">
-
 <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?q=80&w=1200&auto=format&fit=crop">
 
 <div class="category-content">
-
 <h3>Gunung</h3>
-
-<p>
-Destinasi pegunungan dengan panorama indah dan udara sejuk.
-</p>
-
+<p>Destinasi pegunungan dengan panorama indah dan udara sejuk.</p>
 </div>
-
 </div>
 
 <div class="category-card">
-
 <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=1200&auto=format&fit=crop">
 
 <div class="category-content">
-
 <h3>Pantai</h3>
-
-<p>
-Pantai eksotis Indonesia dengan pasir putih dan laut biru.
-</p>
-
+<p>Pantai eksotis Indonesia dengan pasir putih dan laut biru.</p>
 </div>
-
 </div>
 
 <div class="category-card">
-
 <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=1200&auto=format&fit=crop">
 
 <div class="category-content">
-
 <h3>Danau</h3>
-
-<p>
-Danau alami dengan suasana tenang dan panorama indah.
-</p>
-
+<p>Danau alami dengan suasana tenang dan panorama indah.</p>
 </div>
-
 </div>
 
 <div class="category-card">
-
 <img src="https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0?q=80&w=1200&auto=format&fit=crop">
 
 <div class="category-content">
-
 <h3>Air Terjun</h3>
-
-<p>
-Air terjun alami dengan udara segar dan pemandangan hijau.
-</p>
-
+<p>Air terjun alami dengan udara segar dan pemandangan hijau.</p>
 </div>
-
 </div>
 
 <div class="category-card">
-
 <img src="https://images.unsplash.com/photo-1528127269322-539801943592?q=80&w=1200&auto=format&fit=crop">
 
 <div class="category-content">
-
 <h3>Pulau</h3>
-
-<p>
-Pulau tropis Indonesia dengan panorama laut eksotis.
-</p>
-
+<p>Pulau tropis Indonesia dengan panorama laut eksotis.</p>
 </div>
-
 </div>
 
 <div class="category-card">
-
 <img src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?q=80&w=1200&auto=format&fit=crop">
 
 <div class="category-content">
-
 <h3>Hutan</h3>
-
-<p>
-Hutan tropis Indonesia dengan udara yang menyegarkan.
-</p>
-
+<p>Hutan tropis Indonesia dengan udara yang menyegarkan.</p>
 </div>
-
 </div>
 
 </div>
@@ -676,8 +427,6 @@ Review tempat wisata populer di Indonesia 🌏
 
 </div>
 
-<!-- FILTER -->
-
 <div class="filter-buttons">
 
 <button onclick="filterSelection('all')">Semua</button>
@@ -691,8 +440,6 @@ Review tempat wisata populer di Indonesia 🌏
 </div>
 
 <div class="place-container">
-
-<!-- BROMO -->
 
 <div class="place-card gunung">
 
@@ -743,108 +490,6 @@ Lihat Ulasan
 
 </div>
 
-<!-- RAJA AMPAT -->
-
-<div class="place-card pantai pulau">
-
-<img src="https://images.unsplash.com/photo-1500375592092-40eb2168fd21?q=80&w=1200&auto=format&fit=crop">
-
-<div class="place-content">
-
-<h3>Raja Ampat</h3>
-
-<p>
-
-📍 Papua Barat
-
-<br><br>
-
-⭐ Google Maps Rating: 4.9/5
-
-<br><br>
-
-👥 12 ribu ulasan
-
-<br><br>
-
-Raja Ampat dikenal sebagai surga bawah laut Indonesia
-dengan panorama laut yang sangat memukau 🌊
-
-</p>
-
-<a
-class="maps-btn"
-href="https://www.google.com/maps/place/Raja+Ampat"
-target="_blank">
-
-Lihat Maps
-
-</a>
-
-<a
-class="maps-btn"
-href="https://www.google.com/maps/place/Raja+Ampat/reviews"
-target="_blank">
-
-Lihat Ulasan
-
-</a>
-
-</div>
-
-</div>
-
-<!-- DANAU TOBA -->
-
-<div class="place-card danau">
-
-<img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=1200&auto=format&fit=crop">
-
-<div class="place-content">
-
-<h3>Danau Toba</h3>
-
-<p>
-
-📍 Sumatera Utara
-
-<br><br>
-
-⭐ Google Maps Rating: 4.8/5
-
-<br><br>
-
-👥 27 ribu ulasan
-
-<br><br>
-
-Danau Toba merupakan danau vulkanik terbesar di Indonesia
-dengan panorama alam yang sangat indah 🌿
-
-</p>
-
-<a
-class="maps-btn"
-href="https://www.google.com/maps/place/Danau+Toba"
-target="_blank">
-
-Lihat Maps
-
-</a>
-
-<a
-class="maps-btn"
-href="https://www.google.com/maps/place/Danau+Toba/reviews"
-target="_blank">
-
-Lihat Ulasan
-
-</a>
-
-</div>
-
-</div>
-
 </div>
 
 </section>
@@ -859,49 +504,7 @@ Lihat Ulasan
 
 </footer>
 
-<!-- LOGIN MODAL -->
-
-<div class="modal" id="loginModal">
-
-<div class="modal-content">
-
-<span
-class="close-btn"
-onclick="closeLogin()">
-
-×
-
-</span>
-
-<h2>Login</h2>
-
-<input
-type="text"
-id="username"
-placeholder="Masukkan Username">
-
-<input
-type="password"
-id="password"
-placeholder="Masukkan Password">
-
-<button
-id="loginBtn"
-onclick="loginUser()">
-
-Login
-
-</button>
-
-</div>
-
-</div>
-
-<!-- JAVASCRIPT -->
-
 <script>
-
-/* FILTER */
 
 filterSelection("all");
 
@@ -927,101 +530,6 @@ cards[i].style.display = "block";
 }
 
 }
-
-}
-
-/* OPEN LOGIN */
-
-function openLogin(){
-
-document.getElementById("loginModal")
-.style.display = "flex";
-
-}
-
-/* CLOSE LOGIN */
-
-function closeLogin(){
-
-document.getElementById("loginModal")
-.style.display = "none";
-
-}
-
-/* LOGIN */
-
-function loginUser(){
-
-let username =
-document.getElementById("username").value;
-
-let password =
-document.getElementById("password").value;
-
-if(username === "" || password === ""){
-
-alert("Username dan password harus diisi!");
-return;
-
-}
-
-let savedPassword =
-localStorage.getItem(username);
-
-/* akun baru */
-
-if(savedPassword === null){
-
-localStorage.setItem(username,password);
-
-alert("Akun berhasil dibuat!");
-
-}
-
-/* password salah */
-
-else if(savedPassword !== password){
-
-alert("Password salah!");
-return;
-
-}
-
-/* login berhasil */
-
-document.getElementById("welcomeText")
-.innerHTML =
-"🌿 Selamat Datang, " + username + " 👋";
-
-document.getElementById("welcomeBanner")
-.style.display = "block";
-
-document.getElementById("navLogin")
-.innerHTML = "Logout";
-
-document.getElementById("navLogin")
-.onclick = logoutUser;
-
-closeLogin();
-
-}
-
-/* LOGOUT */
-
-function logoutUser(){
-
-document.getElementById("welcomeBanner")
-.style.display = "none";
-
-document.getElementById("navLogin")
-.innerHTML = "Login";
-
-document.getElementById("navLogin")
-.onclick = openLogin;
-
-document.getElementById("username").value = "";
-
-document.getElementById("password").value = "";
 
 }
 
