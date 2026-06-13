@@ -901,11 +901,14 @@ localStorage.removeItem("currentUser");
 document.getElementById("welcomeBanner")
 .style.display = "none";
 
+document.getElementById("welcomeText")
+.innerHTML = "";
+
 document.getElementById("navLogin")
 .innerHTML = "Login";
 
 document.getElementById("navLogin")
-.href = "login.html";
+.href = "login";
 
 document.getElementById("navLogin")
 .onclick = null;
@@ -927,6 +930,13 @@ currentUser + " 👋";
 document.getElementById("welcomeBanner")
 .style.display = "block";
 
+setTimeout(function(){
+
+document.getElementById("welcomeBanner")
+.style.display = "none";
+
+}, 5000);
+
 document.getElementById("navLogin")
 .innerHTML = "Logout";
 
@@ -934,7 +944,13 @@ document.getElementById("navLogin")
 .href = "#";
 
 document.getElementById("navLogin")
-.onclick = logoutUser;
+.onclick = function(e){
+
+e.preventDefault();
+
+logoutUser();
+
+};
 
 }
 
