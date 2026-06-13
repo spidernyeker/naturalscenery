@@ -154,8 +154,6 @@ Login
 
 <script>
 
-<script>
-
 function login(){
 
 let username =
@@ -174,8 +172,6 @@ return;
 let savedPassword =
 localStorage.getItem(username);
 
-/* akun baru */
-
 if(savedPassword === null){
 
 localStorage.setItem(username,password);
@@ -184,16 +180,12 @@ alert("Akun berhasil dibuat!");
 
 }
 
-/* password salah */
-
 else if(savedPassword !== password){
 
 alert("Password salah!");
 return;
 
 }
-
-/* login berhasil */
 
 localStorage.setItem(
 "currentUser",
