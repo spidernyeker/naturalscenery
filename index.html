@@ -495,13 +495,8 @@ font-size:22px;
 
 <li>
 
-<a
-href="#"
-id="navLogin"
-onclick="openLogin()">
-
+<a href="login.html" id="navLogin">
 Login
-
 </a>
 
 </li>
@@ -859,43 +854,6 @@ Lihat Ulasan
 
 </footer>
 
-<!-- LOGIN MODAL -->
-
-<div class="modal" id="loginModal">
-
-<div class="modal-content">
-
-<span
-class="close-btn"
-onclick="closeLogin()">
-
-×
-
-</span>
-
-<h2>Login</h2>
-
-<input
-type="text"
-id="username"
-placeholder="Masukkan Username">
-
-<input
-type="password"
-id="password"
-placeholder="Masukkan Password">
-
-<button
-id="loginBtn"
-onclick="loginUser()">
-
-Login
-
-</button>
-
-</div>
-
-</div>
 
 <!-- JAVASCRIPT -->
 
@@ -930,92 +888,13 @@ cards[i].style.display = "block";
 
 }
 
-/* OPEN LOGIN */
-
-function openLogin(){
-
-document.getElementById("loginModal")
-.style.display = "flex";
-
-}
-
-/* CLOSE LOGIN */
-
-function closeLogin(){
-
-document.getElementById("loginModal")
-.style.display = "none";
-
-}
-
-/* LOGIN */
-
-function loginUser(){
-
-let username =
-document.getElementById("username").value.trim();
-
-let password =
-document.getElementById("password").value.trim();
-
-if(username === "" || password === ""){
-
-alert("Username dan password harus diisi!");
-return;
-
-}
-
-let savedPassword =
-localStorage.getItem(username);
-
-/* akun baru */
-
-if(savedPassword === null){
-
-localStorage.setItem(username,password);
-
-alert("Akun berhasil dibuat!");
-
-}
-
-/* password salah */
-
-else if(savedPassword !== password){
-
-alert("Password salah!");
-return;
-
-}
-
-/* login berhasil */
-
-localStorage.setItem(
-"currentUser",
-username
-);
-
-document.getElementById("welcomeText")
-.innerHTML =
-"🌿 Selamat Datang, " + username + " 👋";
-
-document.getElementById("welcomeBanner")
-.style.display = "block";
-
-document.getElementById("navLogin")
-.innerHTML = "Logout";
-
-document.getElementById("navLogin")
-.onclick = logoutUser;
-
-closeLogin();
-
-}
-
 /* LOGOUT */
 
 function logoutUser(){
 
-localStorage.removeItem("currentUser");
+localStorage.removeItem(
+"currentUser"
+);
 
 document.getElementById("welcomeBanner")
 .style.display = "none";
@@ -1024,11 +903,10 @@ document.getElementById("navLogin")
 .innerHTML = "Login";
 
 document.getElementById("navLogin")
-.onclick = openLogin;
+.href = "login.html";
 
-document.getElementById("username").value = "";
-
-document.getElementById("password").value = "";
+document.getElementById("navLogin")
+.onclick = null;
 
 }
 
@@ -1052,6 +930,9 @@ document.getElementById("navLogin")
 
 document.getElementById("navLogin")
 .onclick = logoutUser;
+
+document.getElementById("navLogin")
+.href = "#";
 
 }
 
