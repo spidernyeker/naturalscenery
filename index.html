@@ -495,8 +495,12 @@ font-size:22px;
 
 <li>
 
-<a href="login.html" id="navLogin">
+<a
+href="login"
+id="navLogin">
+
 Login
+
 </a>
 
 </li>
@@ -892,9 +896,7 @@ cards[i].style.display = "block";
 
 function logoutUser(){
 
-localStorage.removeItem(
-"currentUser"
-);
+localStorage.removeItem("currentUser");
 
 document.getElementById("welcomeBanner")
 .style.display = "none";
@@ -929,10 +931,10 @@ document.getElementById("navLogin")
 .innerHTML = "Logout";
 
 document.getElementById("navLogin")
-.onclick = logoutUser;
+.href = "#";
 
 document.getElementById("navLogin")
-.href = "#";
+.onclick = logoutUser;
 
 }
 
