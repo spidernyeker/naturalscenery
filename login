@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Login</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins', sans-serif;
+}
+
+body{
+
+display:flex;
+justify-content:center;
+align-items:center;
+
+height:100vh;
+
+background:
+linear-gradient(rgba(0,0,0,0.5),
+rgba(0,0,0,0.5)),
+url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?q=80&w=1400&auto=format&fit=crop');
+
+background-size:cover;
+background-position:center;
+}
+
+.box{
+
+background:rgba(255,255,255,0.1);
+
+backdrop-filter:blur(5px);
+
+padding:40px;
+
+border-radius:20px;
+
+width:320px;
+
+text-align:center;
+
+color:white;
+
+border:1px solid rgba(255,255,255,0.2);
+
+box-shadow:0 8px 20px rgba(0,0,0,0.3);
+}
+
+.box h1{
+
+margin-bottom:25px;
+
+font-size:40px;
+
+font-weight:600;
+}
+
+input{
+
+width:100%;
+
+padding:14px;
+
+margin:10px 0;
+
+border:none;
+
+border-radius:10px;
+
+outline:none;
+
+background:rgba(255,255,255,0.8);
+
+font-size:15px;
+}
+
+button{
+
+width:100%;
+
+padding:14px;
+
+margin-top:15px;
+
+border:none;
+
+border-radius:10px;
+
+background:#2e8b57;
+
+color:white;
+
+font-size:16px;
+
+cursor:pointer;
+
+transition:0.3s;
+}
+
+button:hover{
+
+background:#246b45;
+transform:scale(1.02);
+}
+
+@media(max-width:500px){
+
+.box{
+
+width:90%;
+padding:30px;
+}
+
+.box h1{
+
+font-size:32px;
+}
+
+}
+
+</style>
+</head>
+<body>
+
+<div class="box">
+
+<h1>Login</h1>
+
+<input type="text" placeholder="Username">
+
+<input type="password" placeholder="Password">
+
+<button onclick="login()">
+Login
+</button>
+
+</div>
+
+<script>
+
+function login(){
+
+let username =
+document.querySelectorAll("input")[0].value;
+
+let password =
+document.querySelectorAll("input")[1].value;
+
+if(username === "" || password === ""){
+
+alert("Username dan Password harus diisi!");
+return;
+
+}
+
+localStorage.setItem(
+"currentUser",
+username
+);
+
+window.location.href =
+"index.html";
+
+}
+
+</script>
+
+</body>
+</html>
