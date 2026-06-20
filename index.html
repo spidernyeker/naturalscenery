@@ -270,38 +270,20 @@ background:#246b45;
 /* Tampilan Desktop: 2 Kolom */
 .place-container {
     display: grid;
-    /* Ini kuncinya: membuat 2 kolom yang sama besar */
-    grid-template-columns: repeat(2, 1fr); 
-    gap: 30px;
+    /* "1fr 1fr" memaksa 2 kolom yang sama lebar */
+    grid-template-columns: 1fr 1fr; 
+    gap: 20px;
+    padding: 20px;
     align-items: stretch;
 }
 
-/* Tampilan Mobile: 1 Kolom (Otomatis berubah saat layar kecil) */
+/* Hapus atau nonaktifkan aturan media query agar tidak berubah di HP */
 @media (max-width: 768px) {
     .place-container {
-        grid-template-columns: 1fr; 
+        grid-template-columns: 1fr 1fr; /* Tetap 2 kolom bahkan di layar HP */
+        gap: 10px; /* Jarak dibuat lebih kecil agar muat di layar HP */
+        padding: 10px;
     }
-}
-
-.place-card {
-    background: white;
-    border-radius: 20px;
-    overflow: hidden;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-    transition: 0.3s;
-    display: flex;
-    flex-direction: column;
-}
-
-.place-content {
-    padding: 20px;
-    flex-grow: 1;
-    display: flex;
-    flex-direction: column;
-}
-
-.place-content p {
-    margin-bottom: auto;
 }
 
 
