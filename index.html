@@ -267,12 +267,20 @@ background:#246b45;
 
 /* PLACE */
 
-/* Tampilan Kartu yang Sama Rata */
+/* Tampilan Desktop: 2 Kolom */
 .place-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    /* Ini kuncinya: membuat 2 kolom yang sama besar */
+    grid-template-columns: repeat(2, 1fr); 
     gap: 30px;
-    align-items: stretch; /* Memastikan kartu setinggi konten terpanjang */
+    align-items: stretch;
+}
+
+/* Tampilan Mobile: 1 Kolom (Otomatis berubah saat layar kecil) */
+@media (max-width: 768px) {
+    .place-container {
+        grid-template-columns: 1fr; 
+    }
 }
 
 .place-card {
@@ -282,19 +290,20 @@ background:#246b45;
     box-shadow: 0 5px 15px rgba(0,0,0,0.1);
     transition: 0.3s;
     display: flex;
-    flex-direction: column; /* Menyusun konten dari atas ke bawah */
+    flex-direction: column;
 }
 
 .place-content {
     padding: 20px;
-    flex-grow: 1; /* Mengisi sisa ruang agar tinggi kartu sama */
+    flex-grow: 1;
     display: flex;
     flex-direction: column;
 }
 
 .place-content p {
-    margin-bottom: auto; /* Mendorong tombol ke bawah secara otomatis */
+    margin-bottom: auto;
 }
+
 
 
 .maps-btn{
