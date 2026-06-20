@@ -267,39 +267,53 @@ background:#246b45;
 
 /* PLACE */
 
-/* Tampilan Desktop: 2 Kolom */
+/* Container utama selalu 2 kolom */
 .place-container {
     display: grid;
-    /* "1fr 1fr" memaksa 2 kolom yang sama lebar */
-    grid-template-columns: 1fr 1fr; 
-    gap: 20px;
-    padding: 20px;
-    align-items: stretch;
+    grid-template-columns: 1fr 1fr; /* Memaksa 2 kolom */
+    gap: 15px; /* Jarak antar kartu */
+    padding: 10px;
 }
 
-/* Hapus atau nonaktifkan aturan media query agar tidak berubah di HP */
-@media (max-width: 768px) {
-    .place-container {
-        grid-template-columns: 1fr 1fr; /* Tetap 2 kolom bahkan di layar HP */
-        gap: 10px; /* Jarak dibuat lebih kecil agar muat di layar HP */
-        padding: 10px;
-    }
+/* Kartu agar rapi dan sama tinggi */
+.place-card {
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column; /* Konten atas ke bawah */
+    height: 100%; /* Memaksa semua kartu setinggi kartu terpanjang */
 }
 
-
-
-.maps-btn{
-text-decoration:none;
-background:#2e8b57;
-color:white;
-padding:10px 20px;
-border-radius:30px;
-display:inline-block;
-transition:0.3s;
-margin-right:10px;
-margin-top:10px;
+/* Gambar konsisten */
+.place-card img {
+    width: 100%;
+    height: 150px; /* Tinggi gambar dibuat pas */
+    object-fit: cover;
 }
 
+/* Konten teks yang mengisi sisa ruang */
+.place-content {
+    padding: 12px;
+    flex-grow: 1; /* Mengisi ruang sisa */
+    display: flex;
+    flex-direction: column;
+}
+
+/* Mendorong tombol ke bawah agar sejajar di semua kartu */
+.place-content p {
+    margin-bottom: auto; 
+    font-size: 12px; /* Dikecilkan sedikit agar muat */
+}
+
+/* Tombol */
+.maps-btn {
+    margin-top: 10px;
+    display: inline-block;
+}
+
+    
 .maps-btn:hover{
 background:#246b45;
 }
