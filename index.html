@@ -267,44 +267,46 @@ background:#246b45;
 
 /* PLACE */
 
-/* Container utama selalu 2 kolom */
-/* Pastikan container grid tidak membatasi tinggi secara kaku */
-.place-container {
-    display: grid;
-    grid-template-columns: 1fr 1fr; /* Memaksa 2 kolom */
-    gap: 20px;
-    padding: 20px;
+.place-container{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+gap:30px;
 }
 
-.place-card {
-    background: white;
-    border-radius: 20px;
-    overflow: hidden;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-    display: flex;
-    flex-direction: column; /* Mengatur susunan dari atas ke bawah */
-    height: 100%;           /* Memastikan tinggi kartu rata */
+.place-card{
+background:white;
+border-radius:20px;
+overflow:hidden;
+box-shadow:0 5px 15px rgba(0,0,0,0.1);
+transition:0.3s;
 }
 
-/* Biarkan konten mengisi ruang yang ada */
-.place-content {
-    padding: 20px;
-    flex-grow: 1;           /* Memaksa area ini tumbuh mengisi sisa ruang */
-    display: flex;
-    flex-direction: column;
+.place-card:hover{
+transform:translateY(-10px);
 }
 
-/* Memastikan teks deskripsi memberi ruang untuk tombol */
-.place-content p {
-    margin-bottom: auto;    /* Mendorong tombol ke bawah secara otomatis */
-    padding-bottom: 20px;
+.place-card img{
+width:100%;
+height:250px;
+object-fit:cover;
+}
+     
+.place-content{
+padding:20px;
 }
 
-/* Memastikan tombol selalu ada di posisi paling bawah */
-.button-group {
-    margin-top: auto;
-    display: flex;
-    gap: 10px;
+.place-content h3{
+color:#2e8b57;
+margin-bottom:15px;
+font-size:24px;
+}
+
+.place-content p{
+color:#666;
+font-size:14px;
+line-height:1.8;
+margin-bottom:20px;
+min-height:250px;
 }
     
 
